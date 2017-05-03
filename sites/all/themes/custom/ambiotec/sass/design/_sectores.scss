@@ -1,0 +1,213 @@
+.sectores_ambiotec{
+	background: $secondaryColor;	
+	.titulos-carrusel-sectores{
+		.bx-wrapper{
+			border-top: 1px solid $BkgColor;
+			max-width: 100% !important;
+			.bx-viewport{
+				font-family: $mainFontLight;
+				font-size: 13px;
+				padding: 10px 0px;
+				text-transform: uppercase;
+				a{
+					color: #1C1C1C;
+					&.active,
+					&:hover{
+						color: #70767A;
+					}
+				}
+				li{
+					text-align: center;
+					width: 195px !important;
+				}
+			}
+		} 
+	}	
+	.carrusel-sectores{
+		li{
+			position: relative;
+			a{
+				color: $mainColorTxt;
+				&:before{
+					content: '';
+					background: rgba(0,0,0,0.2);
+					display: inline-block;
+					height: 347px;
+					left: 0;
+					position: absolute;
+					top: 0;
+					width: 100%;
+				}
+			}
+			p{				
+				font-size: 16px;			
+				font-family: $mainFontItalic;
+				line-height: 24px;
+				margin: 30px 0 60px;
+				padding: 0 40px;
+			}
+			h2{
+				color: $secondaryColor ;
+				font-family: $mainFontLight;
+				font-size: 32px;
+				position: absolute;
+				text-align: center;
+				text-transform: uppercase;
+				top: 275px;
+				width: 100%;
+				&:before,
+				&:after{
+					content: '';
+					background: url("../images/line.png") no-repeat 0 0;
+					display: inline-block;
+					height: 1px;
+					left: 15px;
+					position: absolute;
+					top: 18px;
+					width: 316px;
+				}
+				&:after{
+					left: inherit;
+					right: 18px;
+				}
+			}
+		}
+		.bx-wrapper{
+			.bx-controls-direction{
+				a{
+					border: 1px solid #000;
+					border-radius: 100%;
+					height: 40px;
+					margin-top: -105px;
+					overflow: hidden;
+					padding: 10px;
+					text-indent: 0;
+					width: 40px;
+					z-index: 1;
+					&:hover{
+						border: 1px solid $mainColorTitle;
+					}
+				}
+			}
+			.bx-prev{
+				left: -100px;
+				&:before{
+					content: "\e602";
+					color: #000;
+					font-family: $iconFont;
+					font-size: 2.5em;
+					margin-right: 20px;
+				}
+			}
+			.bx-next{
+				right: -100px;
+				&:before{
+					content: "\e601";
+					color: #000;
+					font-family: $iconFont;
+					font-size: 2.5em;
+					margin-right: 20px;
+				}
+			}
+			.bx-prev:hover,
+			.bx-next:hover{
+				&:before{
+					color: $mainColorTitle;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 768px) and (max-width:1024px){
+	.sectores_ambiotec{
+		.titulos-carrusel-sectores{
+			.bx-wrapper{
+				.bx-viewport{
+					li{
+						width: 130px !important;
+					}
+				}
+			}
+		}
+		.carrusel-sectores{
+			.bx-wrapper{
+				.bx-prev{
+					left: 5px;
+				}
+				.bx-next{
+					right: 10px;
+				}
+			}
+			li{
+				h2{
+					&:before,
+					&:after{
+						width: 210px;
+					}
+				}
+			}
+		}
+	}    
+}
+
+@media (max-width:767px){
+	.titulos-carrusel-sectores{
+		display: none;
+	}
+	.sectores_ambiotec{
+		padding-bottom: 35px;
+		.carrusel-sectores{
+			border-bottom: 1px solid $mainColorTitle;
+			border-top: 1px solid $mainColorTitle;
+			padding: 10px;
+			li{
+				img{
+					height: 107px;
+					width: 320px;
+				}
+				p{
+					display: none;
+				}
+				h2{
+					color: $mainColorTitle;
+					bottom: -40px;
+					top: inherit;
+					&:before,
+					&:after{
+						color: $mainColorTitle;
+						width: 40px;
+					}
+				}
+			}
+			.bx-viewport{
+				background: #FFF;
+				height: 155px !important;
+			}
+			.bx-wrapper{
+				.bx-controls-direction{
+					a{
+						border-color: $secondaryColor;
+						height: 20px;
+						width: 20px;
+					}
+				}
+				.bx-prev{
+					left: 5px;
+					top: 154px;
+				}
+				.bx-next{
+					right: 10px;
+					top: 154px;
+				}
+				.bx-prev,
+				.bx-next{
+					&:before{
+						color: $secondaryColor;
+						font-size: 1.5em;
+					}
+				}
+			}
+		}
+	} 	
+}

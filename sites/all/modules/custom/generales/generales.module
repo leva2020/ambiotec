@@ -1,0 +1,263 @@
+<?php
+
+/*
+ * @author Eduardo Velasco <leva2020@gmail.com>
+ * 
+*/
+
+
+/**
+ * Implement hook theme
+ */
+function generales_theme() {
+    $hooks = array();
+    $hooks['header_ambiotec'] = array(
+        'variables' => array('data' => array()),
+        'template' => "templates/header_ambiotec"
+    );
+    $hooks['footer_ambiotec'] = array(
+        'variables' => array('data' => array()),
+        'template' => "templates/footer_ambiotec"
+    );
+    return $hooks;
+}
+
+/**
+ * Implement hook info
+ */
+function generales_block_info() {
+    $blocks['header_ambiotec'] = array(
+        'info' => t('Header Ambiotec'),
+    );
+    $blocks['footer_ambiotec'] = array(
+        'info' => t('Footer Ambiotec'),
+    );
+    return $blocks;
+}
+
+/**
+ * Implement hook view
+ */
+function generales_block_view($delta = '') {
+    $block = array();
+    switch ($delta) {
+        case 'header_ambiotec':
+            $block['content'] = theme('header_ambiotec', array('data' => header_ambiotec()));
+            break;
+        case 'footer_ambiotec':
+            $block['content'] = theme('footer_ambiotec', array('data' => footer_ambiotec()));
+            break;
+    }
+    return $block;
+}
+
+function generales_mail($key, &$message, $params) {
+    $message['subject'] = $params['subject'];
+    $message['body'] = $params['body'];
+
+    if(isset($params['file'])):
+        $attachment = array(
+            //'filecontent' => file_get_contents($params['file']->uri),
+            'filepath' => $params['file']->uri,
+            'filename' => $params['file']->filename,
+            'filemime' => $params['file']->filemime,
+            'list' => TRUE
+        );
+        $message['params']['attachments'][] = $attachment;
+    endif;
+    //print '<pre>';var_dump($message);print '</pre>';
+    //exit();die();return;
+    $headers = array(
+        'MIME-Version' => '1.0',
+        'Content-Type' => 'text/html; charset=UTF-8; format=flowed',
+        'Content-Transfer-Encoding' => '8Bit',
+        'X-Mailer' => 'Drupal'
+    );
+    foreach ($headers as $key => $value) {
+        $message['headers'][$key] = $value;
+    }
+}
+
+function header_ambiotec(){
+    $menu = array(
+        'menu' => menu_load_links('menu-menu-principal'),
+    );
+    return $menu;
+}
+
+function footer_ambiotec(){
+    $datos = '';
+    return $datos;    
+}
+
+function form_formulario_contacto_form($form, &$form_state){
+    $form['nombre_contacto'] = array(
+        '#type' => 'textfield',
+        '#size' => 60,
+        '#maxlength' => 128,
+        '#required' => TRUE,
+        '#attributes' =>array(
+                'placeholder' => t('Su nombre completo'),
+            ),
+        '#prefix' => '<div id="alerta-error-nombre"></div>',
+    );
+    $form['correo_electronico'] = array(
+        '#type' => 'textfield',
+        '#size' => 60,
+        '#maxlength' => 128,
+        '#required' => TRUE,
+        '#attributes' =>array(
+                'placeholder' => t('Correo electronico'),
+            ),
+        '#prefix' => '<div id="alerta-error-correo"></div>',
+    );
+    $form['comentario'] = array(
+        '#type' => 'textarea',
+        '#size' => 60,
+        '#maxlength' => 128,
+        '#required' => TRUE,
+        '#attributes' =>array(
+                'placeholder' => t('Escribanos su mensaje. Pronto le responderemos.'),
+            ),
+        '#prefix' => '<div id="alerta-error-comentario"></div>',
+    );
+    $form['#validate'][] = 'validar_correo_enviar';
+    $form['submit_button'] = array(
+        '#type' => 'submit',
+        '#value' => t('enviar')
+    );
+    return $form;
+}
+
+function validar_correo_enviar($form, &$form_state){
+    if (!($_POST['nombre_contacto'])):
+        form_set_error('nombre_contacto', 'Debe ingresar un nombre.');
+        drupal_add_js('jQuery("#alerta-error-nombre").html("Debe ingresar un nombre");window.location.href = "/#home4";',array('type' => 'inline', 'scope' => 'footer'));
+    endif;
+    if (!($_POST['comentario'])):
+        form_set_error('comentario', 'Debe ingresar un comentario.');
+        drupal_add_js('jQuery("#alerta-error-comentario").html("Debe ingresar un comentario");window.location.href = "/#home4"',array('type' => 'inline', 'scope' => 'footer'));
+    endif;
+    if (!valid_email_address($_POST['correo_electronico'])):
+        drupal_add_js('jQuery("#alerta-error-correo").html("Debe ingresar un correo");window.location.href = "/#home4"',array('type' => 'inline', 'scope' => 'footer'));
+        form_set_error('correo_electronico', 'Debe ingresar un correo electronico valido.');
+    endif;
+}
+
+function form_formulario_contacto_form_submit($form, &$form_state){
+    $valid_email = 'info@ambiotec.co';
+    $nombre = $form_state['values']['nombre_contacto'];
+    $comentario = $form_state['values']['comentario'];
+    $mail_user = $form_state['values']['correo_electronico'];
+    //$name_user = $form_state['values']['correo_electronico'];
+    $from = $mail_user;
+    $body[] = $comentario;
+    $to = $valid_email;
+
+    $params = array(
+        'body' => $body,
+        'subject' => 'Formulario de Contacto',
+    );
+    drupal_set_message(t('Se envio mensaje, lo recibimos'));
+    drupal_mail('generales', 'reply', $to, language_default(), $params, $from, TRUE);
+}
+
+function form_formulario_trabaje_form($form, &$form_state){
+    $form['nombre_contacto1'] = array(
+        '#type' => 'textfield',
+        '#size' => 60,
+        '#maxlength' => 128,
+        '#required' => TRUE,
+        '#attributes' =>array(
+                'placeholder' => t('Su nombre completo'),
+            ),
+        '#prefix' => '<div id="alerta-error-nombre1"></div>',
+    );
+    $form['correo_electronico1'] = array(
+        '#type' => 'textfield',
+        '#size' => 60,
+        '#maxlength' => 128,
+        '#required' => TRUE,
+        '#attributes' =>array(
+                'placeholder' => t('Correo electronico'),
+            ),
+        '#prefix' => '<div id="alerta-error-correo1"></div>',
+    );
+    $form['area_interes'] = array(
+        '#type' => 'textfield',
+        '#size' => 60,
+        '#maxlength' => 128,
+        '#required' => TRUE,
+        '#attributes' =>array(
+                'placeholder' => t('Area en la que esta interesado'),
+            ),
+        '#prefix' => '<div id="alerta-error-area"></div>',
+    );
+    $form['file'] = array(
+        '#type' => 'file',
+        '#title_display' => 'invisible',
+        '#size' => 22,
+    );
+       
+    $form['#validate'][] = 'validar_correo_enviar_trabaje';
+    $form['submit_button'] = array(
+        '#type' => 'submit',
+        '#value' => t('enviar')
+    );
+    return $form;
+}
+
+function validar_correo_enviar_trabaje($form, &$form_state){
+    if (!($_POST['nombre_contacto1'])):
+        drupal_add_js('jQuery("#alerta-error-nombre1").html("Debe ingresar un nombre");window.location.href = "/#home4"',array('type' => 'inline', 'scope' => 'footer'));
+        form_set_error('nombre_contacto', 'Debe ingresar un nombre.');
+    endif;
+    if (!($_POST['area_interes'])):
+        drupal_add_js('jQuery("#alerta-error-area").html("Debe ingresar un area");window.location.href = "/#home4"',array('type' => 'inline', 'scope' => 'footer'));
+        form_set_error('comentario', 'Debe ingresar un comentario.');
+    endif;
+    if (!valid_email_address($_POST['correo_electronico1'])):
+        drupal_add_js('jQuery("#alerta-error-correo1").html("Debe ingresar un correo");window.location.href = "/#home4"',array('type' => 'inline', 'scope' => 'footer'));
+        form_set_error('correo_electronico', 'Debe ingresar un correo electronico valido.');
+    endif;
+
+    //if (!($_POST['files'])):
+    $file = file_save_upload('file', array(
+        //'file_validate_is_image' => array(),
+        'file_validate_extensions' => array('doc docx pdf'),
+    ));
+    if ($file):
+        if ($file = file_move($file, 'public://')):
+            $form_state['values']['file'] = $file;
+        else:
+            form_set_error('file', t('Failed to write the uploaded file the site\'s file folder.'));
+        endif;
+    endif;
+    //endif;
+}
+
+function form_formulario_trabaje_form_submit($form, &$form_state){
+    $valid_email = 'gestionhumana@ambiotec.co';
+    //$valid_email = 'leva2020@gmail.com';
+    $nombre = $form_state['values']['nombre_contacto1'];
+    $area_interes = $form_state['values']['area_interes'];
+    $mail_user = $form_state['values']['correo_electronico1'];
+
+    $file=$form_state['values']['file'];
+    unset($form_state['values']['file']);
+    $file->status = FILE_STATUS_PERMANENT;
+    file_save($file);
+    drupal_set_message(t('The form has been submitted and the image has been saved, filename: @filename.', array('@filename' => $file->filename)));
+
+    $from = $mail_user;
+    $body[] = 'Área de interes: </br>'.$area_interes;
+    $to = $valid_email;
+    $params = array(
+        'body' => $body,
+        'subject' => 'Formulario Trabaje con Nosotros',
+        'file' => $file
+    );
+    //print '<pre>'; var_dump($params); print '</pre>';exit();die();return;
+    drupal_mail('generales', 'reply', $to, language_default(), $params, $from, TRUE);
+    
+}

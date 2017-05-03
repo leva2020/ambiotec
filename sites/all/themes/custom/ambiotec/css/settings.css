@@ -1,0 +1,66 @@
+/*
+Error: File to import not found or unreadable: singularitygs.
+       Load paths:
+         Compass::SpriteImporter
+         C:/Users/u ser/Documents/web/amb/sass
+         C:/Ruby187/lib/ruby/gems/1.8/gems/compass-core-1.0.3/stylesheets
+        on line 2 of C:/Users/u ser/Documents/web/amb/sass/settings.scss
+
+1: @import "compass";
+2: @import 'singularitygs';
+3: @import "toolkit/clearfix";
+4: 
+5: //////////////////////////////
+6: // Variables
+7: //////////////////////////////
+
+Backtrace:
+C:/Users/u ser/Documents/web/amb/sass/settings.scss:2
+C:/Ruby187/lib/ruby/gems/1.8/gems/sass-3.4.12/lib/sass/tree/import_node.rb:66:in `import'
+C:/Ruby187/lib/ruby/gems/1.8/gems/sass-3.4.12/lib/sass/tree/import_node.rb:28:in `imported_file'
+C:/Ruby187/lib/ruby/gems/1.8/gems/sass-3.4.12/lib/sass/tree/import_node.rb:37:in `css_import?'
+C:/Ruby187/lib/ruby/gems/1.8/gems/sass-3.4.12/lib/sass/tree/visitors/perform.rb:311:in `visit_import'
+C:/Ruby187/lib/ruby/gems/1.8/gems/sass-3.4.12/lib/sass/tree/visitors/base.rb:36:in `send'
+C:/Ruby187/lib/ruby/gems/1.8/gems/sass-3.4.12/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Ruby187/lib/ruby/gems/1.8/gems/sass-3.4.12/lib/sass/tree/visitors/perform.rb:158:in `visit'
+C:/Ruby187/lib/ruby/gems/1.8/gems/sass-3.4.12/lib/sass/stack.rb:79:in `with_base'
+C:/Ruby187/lib/ruby/gems/1.8/gems/sass-3.4.12/lib/sass/stack.rb:115:in `with_frame'
+C:/Ruby187/lib/ruby/gems/1.8/gems/sass-3.4.12/lib/sass/stack.rb:79:in `with_base'
+C:/Ruby187/lib/ruby/gems/1.8/gems/sass-3.4.12/lib/sass/tree/visitors/perform.rb:158:in `visit'
+C:/Ruby187/lib/ruby/gems/1.8/gems/sass-3.4.12/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+C:/Ruby187/lib/ruby/gems/1.8/gems/sass-3.4.12/lib/sass/tree/visitors/base.rb:52:in `map'
+C:/Ruby187/lib/ruby/gems/1.8/gems/sass-3.4.12/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+C:/Ruby187/lib/ruby/gems/1.8/gems/sass-3.4.12/lib/sass/tree/visitors/perform.rb:167:in `visit_children'
+C:/Ruby187/lib/ruby/gems/1.8/gems/sass-3.4.12/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+C:/Ruby187/lib/ruby/gems/1.8/gems/sass-3.4.12/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+C:/Ruby187/lib/ruby/gems/1.8/gems/sass-3.4.12/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Ruby187/lib/ruby/gems/1.8/gems/sass-3.4.12/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+C:/Ruby187/lib/ruby/gems/1.8/gems/sass-3.4.12/lib/sass/tree/visitors/base.rb:36:in `send'
+C:/Ruby187/lib/ruby/gems/1.8/gems/sass-3.4.12/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Ruby187/lib/ruby/gems/1.8/gems/sass-3.4.12/lib/sass/tree/visitors/perform.rb:157:in `visit'
+C:/Ruby187/lib/ruby/gems/1.8/gems/sass-3.4.12/lib/sass/tree/visitors/perform.rb:8:in `send'
+C:/Ruby187/lib/ruby/gems/1.8/gems/sass-3.4.12/lib/sass/tree/visitors/perform.rb:8:in `visit'
+C:/Ruby187/lib/ruby/gems/1.8/gems/sass-3.4.12/lib/sass/tree/root_node.rb:36:in `css_tree'
+C:/Ruby187/lib/ruby/gems/1.8/gems/sass-3.4.12/lib/sass/tree/root_node.rb:20:in `render'
+C:/Ruby187/lib/ruby/gems/1.8/gems/sass-3.4.12/lib/sass/engine.rb:268:in `render'
+C:/Ruby187/lib/ruby/gems/1.8/gems/sass-3.4.12/lib/sass/plugin/compiler.rb:492:in `update_stylesheet'
+C:/Ruby187/lib/ruby/gems/1.8/gems/sass-3.4.12/lib/sass/plugin/compiler.rb:215:in `update_stylesheets'
+C:/Ruby187/lib/ruby/gems/1.8/gems/sass-3.4.12/lib/sass/plugin/compiler.rb:209:in `each'
+C:/Ruby187/lib/ruby/gems/1.8/gems/sass-3.4.12/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+C:/Ruby187/lib/ruby/gems/1.8/gems/sass-3.4.12/lib/sass/plugin/compiler.rb:293:in `watch'
+C:/Ruby187/lib/ruby/gems/1.8/gems/compass-1.0.3/lib/compass/sass_compiler.rb:46:in `watch!'
+C:/Ruby187/lib/ruby/gems/1.8/gems/compass-1.0.3/lib/compass/commands/watch_project.rb:41:in `perform'
+C:/Ruby187/lib/ruby/gems/1.8/gems/compass-1.0.3/lib/compass/commands/base.rb:18:in `execute'
+C:/Ruby187/lib/ruby/gems/1.8/gems/compass-1.0.3/lib/compass/commands/project_base.rb:19:in `execute'
+C:/Ruby187/lib/ruby/gems/1.8/gems/compass-1.0.3/lib/compass/exec/sub_command_ui.rb:43:in `perform!'
+C:/Ruby187/lib/ruby/gems/1.8/gems/compass-1.0.3/lib/compass/exec/sub_command_ui.rb:15:in `run!'
+C:/Ruby187/lib/ruby/gems/1.8/gems/compass-1.0.3/bin/compass:30
+C:/Ruby187/lib/ruby/gems/1.8/gems/compass-1.0.3/bin/compass:44:in `call'
+C:/Ruby187/lib/ruby/gems/1.8/gems/compass-1.0.3/bin/compass:44
+C:/Ruby187/bin/compass:23:in `load'
+C:/Ruby187/bin/compass:23
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: File to import not found or unreadable: singularitygs.\A        Load paths:\A          Compass::SpriteImporter\A          C:/Users/u ser/Documents/web/amb/sass\A          C:/Ruby187/lib/ruby/gems/1.8/gems/compass-core-1.0.3/stylesheets\A         on line 2 of C:/Users/u ser/Documents/web/amb/sass/settings.scss\A \A 1: @import \"compass\";\A 2: @import 'singularitygs';\A 3: @import \"toolkit/clearfix\";\A 4: \A 5: //////////////////////////////\A 6: // Variables\A 7: //////////////////////////////"; }

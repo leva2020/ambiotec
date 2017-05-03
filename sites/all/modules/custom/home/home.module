@@ -1,0 +1,53 @@
+<?php
+/**
+ * @author Eduardo Velasco <leva2020@gmail.com>
+ * 
+ */
+
+/**
+ * Implementation of hook_menu
+*/
+
+function home_init(){
+    drupal_add_css(drupal_get_path('theme', 'ambiotec') . '/css/bxslider.css');
+    drupal_add_css(drupal_get_path('theme', 'ambiotec') . '/css/custom.css');
+}
+
+function home_menu() {
+    $items = array();
+    $items['home'] = array(
+        'title' => 'Home Ambiotec',
+        'page callback' => 'ambiotec_home',
+        'access callback' => true,
+        'type' => MENU_NORMAL_ITEM,
+    );
+    return $items;
+}
+
+/**
+ * Implement hook theme
+ */
+function home_theme() {
+    $hooks = array();
+    $hooks['ambiotec_home'] = array(
+        'variables' => array('data' => array()),
+        'template' => "templates/ambiotec_home"
+    );
+    
+    return $hooks;
+}
+
+function ambiotec_home(){
+    $sectores = obtiene_sectores();
+    $servicios = obtiene_servicios();
+    $clientes = obtiene_clientes();
+    $noticias = obtiene_noticias();
+    $textos = obtiene_textos_inicio();
+    return theme('ambiotec_home', array(
+            'sectores' => $sectores,
+            'servicios' => $servicios,
+            'clientes' => $clientes,
+            'noticias' => $noticias,
+            'textos' => $textos,
+        ));
+}

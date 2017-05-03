@@ -1,0 +1,53 @@
+<?php
+/**
+ * @author Eduardo Velasco <leva2020@gmail.com>
+ * 
+ */
+
+/**
+ * Implementation of hook_menu
+*/
+
+function interna_menu() {
+    $items = array();
+    $items['contenido/%/%'] = array(
+        'title' => 'Interna Ambiotec',
+        'page callback' => 'ambiotec_interna',
+        'page arguments' => array(1,2),
+        'access callback' => true,
+        'type' => MENU_NORMAL_ITEM,
+    );
+    return $items;
+}
+
+/**
+ * Implement hook theme
+ */
+function interna_theme() {
+    $hooks = array();
+    $hooks['ambiotec_interna'] = array(
+        'variables' => array('data' => array()),
+        'template' => "templates/ambiotec_interna"
+    );
+    
+    return $hooks;
+}
+
+function ambiotec_interna(){
+    $nodo = node_load(arg(2));
+    if($nodo->type == 'servicio'):
+        $titulo = 'otros servicios';
+        $proyectos = obtiene_proyectos_x_servicio(arg(2));
+        $otros = obtiene_servicios();
+    elseif($nodo->type == 'sector'):
+        $titulo = 'otros sectores';
+        $proyectos = obtiene_proyectos_x_sector(arg(2));
+        $otros = obtiene_sectores();
+    endif;
+    return theme('ambiotec_interna', array(
+            'nodo' => $nodo,
+            'titulo' => $titulo,
+            'otros' => $otros,
+            'proyectos' => $proyectos
+        ));
+}

@@ -1,0 +1,173 @@
+<?php
+
+function obtieneIdioma(){
+	$urlActual =  url($_GET['q']);
+    $espanol = strpos($urlActual, '/es/');
+    $ingles = strpos($urlActual, '/en/');
+    if($ingles === false):
+        $idioma = 'es';
+    elseif($espanol === false):
+        $idioma = 'en';
+    endif;
+    return $idioma;
+}
+
+function obtiene_textos_inicio(){
+    $inicio = db_select('node','n')
+            ->condition('type', 'inicio', '=')
+            ->range(0, 1)
+            ->fields('n')
+            ->execute();
+    $inicio = $inicio->fetchAssoc();
+    $info_inicio = node_load($inicio['nid']);
+    return $info_inicio;
+}
+
+function obtiene_sectores(){
+    $info_sectores = array();
+    $sectores = db_select('node','n')
+            ->condition('type', 'sector', '=')
+            ->fields('n')
+            ->orderBy('created', 'DESC')
+            ->execute();
+    $i = 0;
+    $acentos = array('á','é','í','ó','ú','ñ');
+    $sin_acentos = array('a','e','i','o','u','n');
+    while ($info = $sectores->fetchAssoc()):
+        if($i < 5):
+            $nodo = node_load($info['nid']);
+            $titulo = strtolower($nodo->title);
+            $titulo = str_replace(' ', '-', $titulo);
+            $titulo = str_replace($acentos, $sin_acentos, $titulo);
+            $nodo->url_seo = $titulo;
+            $info_sectores[] = $nodo;
+        endif;
+        $i++;
+    endwhile;
+    return $info_sectores;
+}
+
+
+function obtiene_servicios(){
+	$info_servicios = array();
+    $acentos = array('á','é','í','ó','ú','ñ');
+    $sin_acentos = array('a','e','i','o','u','n');
+    $servicios = db_select('node','n')
+            ->condition('type', 'servicio', '=')
+            ->fields('n')
+            ->orderBy('created', 'DESC')
+            ->execute();
+    $i = 0;
+    while ($info = $servicios->fetchAssoc()):
+        if($i < 5):
+            $nodo = node_load($info['nid']);
+            $titulo = strtolower($nodo->title);
+            $titulo = str_replace(' ', '-', $titulo);
+            $titulo = str_replace($acentos, $sin_acentos, $titulo);
+            $nodo->url_seo = $titulo;
+            $info_servicios[] = $nodo;
+        endif;
+        $i++;
+    endwhile;
+    return $info_servicios;
+}
+
+function obtiene_proyectos_x_sector($nid){
+    /*$idioma = obtieneIdioma();*/
+    $proyectos = array();
+    $consulta = db_select('node', 'n');
+    $consulta->join('field_data_field_sector', 's', 'n.nid = s.entity_id');
+    $consulta->fields('n',array('nid', 'type', 'uid'))
+            ->fields('s',array('entity_id'))
+            ->condition('field_sector_target_id', $nid, '=')
+            ->condition('type', 'proyecto', '=');
+    $consulta = $consulta->execute();
+    while ($info = $consulta->fetchAssoc()):
+        $proyectos[] = node_load($info['nid']);
+    endwhile;
+    return $proyectos;
+}
+
+function obtiene_proyectos_x_servicio($nid){
+    /*$idioma = obtieneIdioma();*/
+    $proyectos = array();
+    $consulta = db_select('node', 'n');
+    $consulta->join('field_data_field_servicio', 's', 'n.nid = s.entity_id');
+    $consulta->fields('n',array('nid', 'type', 'uid'))
+            ->fields('s',array('entity_id', 'field_servicio_target_id'))
+            ->condition('field_servicio_target_id', $nid, '=')
+            ->condition('type', 'proyecto', '=');
+    $consulta = $consulta->execute();
+    while ($info = $consulta->fetchAssoc()):
+        $proyectos[] = node_load($info['nid']);
+    endwhile;
+    return $proyectos;
+}
+
+function obtiene_clientes(){
+    $sectores = db_select('node','n')
+            ->condition('type', 'sector', '=')
+            ->fields('n')
+            ->orderBy('created', 'DESC')
+            ->execute();
+    $j = 0;
+    while ($info = $sectores->fetchAssoc()):
+        if($j < 5):
+            $info_sectores['nid'][] = $info['nid'];
+            $info_sectores['title'][] = $info['title'];
+        endif;
+        $j++;
+    endwhile;
+
+    $clientes = db_select('node','n')
+            ->condition('type', 'clientes', '=')
+            ->fields('n')
+            ->execute();
+    $i = 0;
+    while ($info = $clientes->fetchAssoc()):
+        //if($i < 5):
+            $info_clientes[] = node_load($info['nid']);
+        //endif;
+        $i++;
+    endwhile;
+    foreach($info_clientes as $cli):
+        if(in_array($cli->field_sector['und'][0]['target_id'], $info_sectores['nid'])):
+            $filtro_clientes[$cli->field_sector['und'][0]['target_id']][] = $cli;
+        endif;
+    endforeach;
+    $datos['clientes'] = $filtro_clientes;
+    $datos['nid_sectores'] = $info_sectores['nid'];
+    $datos['n_clientes'] = $info_sectores['title'];
+    return $datos;
+}
+
+function obtiene_style_img($style, $uri){
+    $img = theme_image_style(
+        array(
+            'style_name' => $style,
+            'path' => $uri,
+            'attributes' => array(
+            'class' => 'servicio-img'
+                ),
+            'width' => NULL,
+            'height' => NULL,
+            )
+        );
+    return $img;
+}
+
+function obtiene_noticias(){
+	$info_noticias = array();
+    $noticias = db_select('node','n')
+            ->condition('type', 'noticias', '=')
+            ->fields('n')
+            ->execute();
+    $i = 0;
+    while ($info = $noticias->fetchAssoc()):
+        if($i < 5):
+            $info_noticias[] = node_load($info['nid']);
+        endif;
+        $i++;
+    endwhile;
+    return $info_noticias;
+}

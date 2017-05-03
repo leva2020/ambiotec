@@ -1,0 +1,451 @@
+body{
+	background: $BkgColorIntro;
+	font-family: $mainFont;
+}
+ul{
+	li{
+		list-style: none;
+	}
+}
+a{
+	text-decoration: none;
+}
+
+.content{
+	header{
+		background: $mainBkgColor;
+		box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.3);
+		position: fixed;
+		width: 100%;
+		z-index: 999;
+	}
+}
+.header-ambiotec-mobile,
+.icono-menu{
+	display: none;
+}
+.header-ambiotec{
+	margin: 0 auto;
+	width: 1040px;	
+	h1{
+		position: relative;
+		&:before{
+			content: '';
+			background: url("../images/logo-mini.png") no-repeat 0 0;
+			background-size: contain;
+			display: inline-block;
+			height: 50px;
+			left: -5px;
+			position: absolute;
+			top: 0;
+			width: 192px;
+		}
+	}
+	.menu-ambiotec{
+		float: left;
+		ul{
+			overflow: hidden;
+			padding-left: 200px;
+			li{				
+				display: inline-block;
+				float: left;
+				font-size: 14px;
+				padding: 13px 0;
+				text-transform: uppercase;
+				a{
+					border-right: 1px solid #60A1C2;
+					color: $secondaryColor;
+					display: inline-block;
+					padding: 0 15px;
+				}
+				&:hover{
+					background: $hoverBkg;
+				}
+				&:last-child{
+					a{
+						border-right: 0;
+					}					
+				}				
+			}			
+		}
+	}
+	.corporativo{	
+		a{
+			background: $hoverBkg;
+			border-left: 1px solid #41729C;
+			color: $secondaryColor;
+			font-size: 14px;
+			padding: 12px;	
+			position: absolute;
+			right: 0;
+			top: 0;
+			&:before{
+				content: "\e603";
+				font-family: $iconFont;
+				margin-right: 10px;
+			}
+		}
+	}
+}
+.grilla-clientes ul{
+	display: none;
+}
+.grilla-clientes .activo{
+	display: block;
+}
+.texto-intro-completo{
+	display: none;
+}
+.texto-intro-completo.activo{
+	display: block;
+}
+#block-system-main{
+	.content{	
+		padding-top: 40px;
+	}
+}
+
+.intro_ambiotec{
+	font-family: $mainFont;
+	.texto-intro-1{
+		border-bottom: 1px solid $mainColorTxt;
+		border-top: 1px solid $mainColorTxt;
+		color: $mainColorTxt;
+		font-size: 16px;
+		font-family: $mainFontItalic;
+		line-height: 24px;
+		margin: 0 auto 30px;
+		padding: 30px 15px;
+		text-align: center;
+		width: 400px;
+		.ver-mas-intro{
+			display: block;
+			font-size: 13px;
+			font-family: $mainFontLight;
+			margin-top: 20px;
+			text-transform: uppercase;
+			&:before{				
+				content: "\e604";
+				border: 2px solid $mainColorTxt;
+				border-radius: 100%;
+				cursor: pointer;
+				display: block;
+				font-family: $iconFont;
+				font-size: 2.2em;
+				height: 48px;
+				line-height: 48px;
+				margin: 0 auto;
+				width: 48px;
+			}
+		}
+	}
+	.logo-2{
+		background: $secondaryColorTxt;
+		color: $secondaryColor;
+		cursor: pointer;
+		font-family: $secondaryFont;
+		font-size: 38px;
+		margin-bottom: 10px;
+		padding: 15px 0;
+		position: relative;
+		text-align: center;
+		&:hover,
+		&.active{
+			background: $secondaryColor;
+			color: $secondaryColorTxt;
+			&:after{
+				color: $secondaryColorTxt;
+			}
+		}
+		&:after{
+			content: "\e60b";
+			color: $secondaryColor;
+			font-family: $iconFont;
+			position: absolute;
+			right: 20px;
+		}
+	}
+	.texto-intro-completo{
+		display: inherit;
+		height: 0;
+		margin: 0 auto;
+		overflow: hidden;
+		width: 1000px;
+		transition: height 0.5s;
+		.mision,
+		.vision{
+			float: left;
+			width: 50%;
+			h2{
+				background: $BkgColor;
+				color: $secondaryColor;
+				font-family: $mainFontLight;
+				font-size: 30px;
+				padding: 10px 0;
+				text-align: center;
+			}
+			p{				
+				color: $mainColorTxt;
+				font-size: 16px;
+				font-family: $mainFontItalic;
+				line-height: 26px;
+				padding: 15px 10px;
+				padding-right: 80px;
+			}
+		}
+		&.activo{
+			display: inherit;
+			height: 520px;
+			transition: height 0.5s;
+		}
+	}
+}
+section[id^="home"]{
+	padding-top: 20px;
+	h1{
+		color: $secondaryColorTxt;
+		font-family: $secondaryFont;
+		font-size: 38px;
+		margin: 0 auto 10px;
+		padding: 15px 0 10px;
+		text-align: center;
+	}
+	div,
+	ul{
+		margin: 0 auto;
+		width: 1040px;
+	}
+}
+.bx-wrapper {
+	.bx-viewport{		
+		background: none;
+		border: 0;
+		box-shadow: none;
+		-moz-box-shadow: none;
+		-webkit-box-shadow: none;
+	}
+}
+form{
+	position: relative;
+	font-family: $mainFont;
+	input,
+	textarea{
+		background: $secondaryColor;
+		border: 0;
+		color: #BDC3C7;
+		font-size: 16px;
+		margin: 5px 0;
+		padding: 10px;
+	}			
+	.form-submit{
+		background: $mainBkgColor;
+		color: $secondaryColor;
+		cursor: pointer;
+		font-family: $mainFont;
+		font-size: 16px;
+		margin: 10px 0;
+		text-align: center;
+		text-transform: capitalize;
+		width: auto;
+		&:hover{
+			background: $secondaryColor;
+			color: $mainBkgColor;
+		}
+	}
+}
+::-webkit-input-placeholder{ 
+	color: #BDC3C7;
+	font-family: $mainFont; 
+	font-size: 16px;
+}
+::-moz-placeholder{ 
+	color: #BDC3C7;
+	font-family: $mainFont; 
+	font-size: 16px;
+} /* firefox 19+ */
+:-ms-input-placeholder{ 
+	color: #BDC3C7;
+	font-family: $mainFont; 
+	font-size: 16px;
+} /* ie */
+input:-moz-placeholder{ 
+	color: #BDC3C7;
+	font-family: $mainFont; 
+	font-size: 16px;
+}
+
+footer{
+	background: $secondaryColor;
+	font-size: 12px;
+	padding: 10px 0 4px;
+	text-align: center;
+	p{
+		margin-bottom: 10px;
+	}
+}
+#alerta-error-nombre,
+#alerta-error-correo,
+#alerta-error-comentario,
+#alerta-error-nombre1,
+#alerta-error-correo1,
+#alerta-error-area{
+	color: $mainBkgColor;
+	font-family: $mainFont;
+	font-size: 12px;
+	height: 10px;
+}
+#alerta-error-nombre{
+	position: absolute;
+	top: 0;
+}
+#alerta-error-comentario{
+	margin-bottom: 10px;
+}
+@media (min-width: 768px) and (max-width:1024px){
+	.header-ambiotec{
+		h1:before{
+			left: 10px;
+		}
+	} 
+	section[id^="home"]{
+		div,
+		ul{
+			margin: 0 auto;
+			width: 747px;
+		}
+	}
+	.intro_ambiotec{
+		.texto-intro-completo{
+			width: 747px;
+			&.activo{
+				height: 560px;
+			}
+		}
+	} 	
+}
+
+@media (max-width:1024px){
+	header{
+		background: $mainBkgColor;
+		height: 40px;
+	}	
+	.icono-menu{
+		cursor: pointer;
+		display: block;
+		position: absolute;
+		top: 6px;
+		right: 60px;
+		span{
+			display: inline-block;
+			height: 20px;
+			overflow: hidden;
+			width: 20px;
+			&:before{
+				content: "\e60a";
+				color: $secondaryColor;
+				font-family: $iconFont;
+				font-size: 1.5em;
+			}
+		}		
+	}
+	.header-ambiotec{
+		.menu-ambiotec{
+			display: none;
+		}
+		.corporativo{
+			a{
+				color: transparent;
+				padding: 11px;
+				width: 25px;
+				&:before{
+					color: #fff;
+					font-size: 1.2em;
+					margin-left: 5px;
+					margin-right: 12px;
+				}
+			}
+		} 
+	} 	
+	body.active .header-ambiotec-mobile{
+		top: 40px;
+		transition:  0.8s;
+		-moz-transition:  0.8s;
+		-webkit-transition:  0.8s;
+	}
+	.header-ambiotec-mobile{
+		background: $mainBkgColor;
+		display: block;
+		right: 0;
+		position: fixed;
+		text-align: center;
+		top: -235px;
+		width: 54%;
+		transition:  0.8s;
+		-moz-transition:  0.8s;
+		-webkit-transition:  0.8s;
+		z-index: 2;
+		.menu-ambiotec{
+			ul{
+				li{
+					/*border-bottom: 1px solid $secondaryColor;*/
+					a{
+						color: $secondaryColor;
+						display: inline-block;
+						padding: 15px 20px;
+					}
+				}
+			}
+		}
+		.corporativo{
+			display: none;
+		}
+	}
+	.container{
+		position: relative;
+		right: 0;
+		transition:  0.5s;
+		-moz-transition:  0.5s;
+		-webkit-transition:  0.5s;
+	}
+	.container.active{
+		right: 70%;		
+		transition:  0.5s;
+		-moz-transition:  0.5s;
+		-webkit-transition:  0.5s;
+	}
+}
+
+@media (max-width:767px){
+	.intro_ambiotec{
+		.logo-2{
+			background-size: contain;
+			&:after{
+				content:'';
+			}
+		}
+		.texto-intro-1{
+			width: 320px;
+		}
+		.texto-intro-completo{
+			width: 320px;
+			.mision,
+			.vision{
+				width: 100%;
+			}
+			&.activo{
+				height: 860px;
+			}
+		}
+	} 
+	section[id^="home"]{
+		div,
+		ul{
+			margin: 0 auto;
+			width: 320px;
+		}
+	}
+	#alerta-error-correo{
+		position: absolute;
+		top: 62px;
+	}
+}

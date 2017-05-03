@@ -1,0 +1,1316 @@
+@import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700);
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+a {
+  text-decoration: none;
+}
+/*fuentes*/
+@font-face {
+  font-family: 'lane_-_narrowregular';
+  src: url('fonts/lanenar_-webfont.eot');
+  src: url('fonts/lanenar_-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/lanenar_-webfont.woff') format('woff'), url('fonts/lanenar_-webfont.ttf') format('truetype'), url('fonts/lanenar_-webfont.svg#lane_-_narrowregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'museo_slab500';
+  src: url('fonts/Museo_Slab_500_2-webfont.eot');
+  src: url('fonts/Museo_Slab_500_2-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/Museo_Slab_500_2-webfont.woff') format('woff'), url('fonts/Museo_Slab_500_2-webfont.ttf') format('truetype'), url('fonts/Museo_Slab_500_2-webfont.svg#museo_slab500') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'modern_pictogramsnormal';
+  src: url('fonts/modernpics-webfont.eot');
+  src: url('fonts/modernpics-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/modernpics-webfont.woff') format('woff'), url('fonts/modernpics-webfont.ttf') format('truetype'), url('fonts/modernpics-webfont.svg#modern_pictogramsnormal') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/*Variable*/
+/*Inicio*/
+h1,
+h2,
+h3,
+.titulo-sectores {
+  font-family: 'museo_slab500';
+}
+body {
+  background: #F9F9F9;
+  color: #666;
+  font-family: 'lane_-_narrowregular';
+  font-size: 16px;
+  line-height: 1.2;
+  margin: 0;
+  font-size: 100%;
+}
+#header {
+  background: #0099cc;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.35);
+  padding: 5px 0 5px;
+  position: relative;
+}
+#header h1 a {
+  background: url("../images/ambiotec.jpg") no-repeat scroll 0 0 transparent;
+  display: block;
+  height: 50px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 183px;
+  z-index: 90;
+}
+#header #btn-movil {
+  margin-left: 187px;
+  padding: .5em;
+}
+#header #btn-movil:after {
+  content: 'Z';
+  font-family: 'modern_pictogramsnormal';
+  color: #ffffff;
+  font-size: 2em;
+}
+#header .block-menu-personalizado {
+  min-height: 27px;
+  max-width: 800px;
+  position: relative;
+}
+#header .block-menu-personalizado ul {
+  background: #0099cc;
+  box-shadow: 0 2px 6px #555;
+  -moz-box-shadow: 0 2px 6px #555;
+  -o-box-shadow: 0 2px 6px #555;
+  -webkit-box-shadow: 0 2px 6px #555;
+  display: none;
+  height: 160px;
+  margin: 0;
+  position: absolute;
+  top: 35px;
+  right: 0;
+  width: 42.7%;
+  z-index: 90;
+}
+#header .block-menu-personalizado ul.activo {
+  display: block;
+}
+#header .block-menu-personalizado ul li a {
+  color: #ffffff;
+  display: block;
+  margin-top: -3px;
+  padding: .5em;
+  text-transform: uppercase;
+}
+#header .block-menu-personalizado ul li a:hover {
+  background: #0288bc;
+}
+#header .block-menu-personalizado span {
+  background: #0288bc;
+  display: block;
+  height: 40px;
+  right: 30px;
+  top: -4px;
+  position: absolute;
+}
+#header .block-menu-personalizado span a {
+  color: #ffffff;
+}
+#header .block-menu-personalizado span a.idioma-eng {
+  background: url('../images/banderas.png') no-repeat center 13px;
+  display: block;
+  height: 14px;
+  padding: .7em;
+  text-indent: -9999px;
+  width: 20px;
+}
+#header .block-menu-personalizado span a.idioma-esp {
+  background: url('../images/banderas.png') no-repeat center -15px;
+  display: block;
+  height: 14px;
+  padding: .7em;
+  text-indent: -9999px;
+  width: 20px;
+}
+#header .block-menu-personalizado span:last-child {
+  right: 0;
+  width: 34px;
+}
+#header .block-menu-personalizado span:last-child a {
+  color: transparent;
+}
+#header .block-menu-personalizado span:last-child a:before {
+  color: #ffffff;
+  content: 'm';
+  display: block;
+  font-size: 1.7em;
+  font-family: 'modern_pictogramsnormal';
+  padding: .2em;
+}
+#main {
+  background: #ffffff;
+  margin: 0 auto;
+  max-width: 958px;
+  padding: 5% 2%;
+  width: 96%;
+}
+.page-inicio .pane-content > section > div:last-child,
+.page-inicio .slider_notas,
+.descrpcion-sectores,
+.nuestra-historia {
+  border: 1px solid #cecece;
+  padding: 3%;
+}
+.page-inicio .pane-content > section > div:last-child h2,
+.page-inicio .slider_notas h2,
+.descrpcion-sectores h2,
+.nuestra-historia h2,
+.page-inicio .pane-content > section > div:last-child h1,
+.page-inicio .slider_notas h1,
+.descrpcion-sectores h1,
+.nuestra-historia h1 {
+  color: #034d72;
+  font-size: 1.1em;
+  margin-bottom: 3%;
+}
+.page-inicio .pane-content > section > div:last-child p,
+.page-inicio .slider_notas p,
+.descrpcion-sectores p,
+.nuestra-historia p {
+  background: #f1f1f1;
+  padding: 3%;
+}
+.page-inicio .slider_notas {
+  margin: 0 auto 5%;
+  max-width: 360px;
+  padding-bottom: 10%;
+  overflow: hidden;
+  width: 93.5%;
+}
+.page-inicio .slider_notas h2 {
+  color: #4aba82;
+}
+.page-inicio .slider_notas p {
+  background: transparent;
+  padding: 0;
+}
+.page-inicio .slider_notas .slide {
+  width: 1800px;
+}
+.page-inicio .slider_notas .slide li {
+  float: left;
+  margin-right: 3%;
+  width: 350px;
+}
+.page-inicio .slider_notas .nav-notas {
+  bottom: 3px;
+}
+.descrpcion-sectores p {
+  background: transparent;
+  margin-bottom: 3%;
+  padding: 0;
+}
+.descrpcion-sectores + .titulo-sectores {
+  margin: 3% 0;
+}
+.pestanas > a {
+  background: #F4F4F4;
+  color: #B6B6B6;
+  border: 1px solid #cecece;
+  border-bottom: none;
+  display: block;
+  float: right;
+  font-family: 'museo_slab500';
+  margin: 0 3px 0 5px;
+  text-transform: uppercase;
+  padding: 1em;
+  position: relative;
+}
+.pestanas > a.activo,
+.pestanas > a:hover {
+  background: #f1f1f1;
+  color: #0288bc;
+}
+.pestanas > a.activo:after,
+.pestanas > a:hover:after {
+  top: 100%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(255, 255, 255, 0);
+  border-top-color: #f1f1f1;
+  border-width: 15px;
+  left: 50%;
+  margin-left: -15px;
+  z-index: 9;
+}
+.pestanas > a.pestana-noticias {
+  background: #4aba82;
+  color: #ffffff;
+}
+.pestanas > a.pestana-noticias:after {
+  top: 100%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(255, 255, 255, 0);
+  border-top-color: #4aba82;
+  border-width: 15px;
+  left: 50%;
+  margin-left: -15px;
+  z-index: 9;
+}
+.contenedor-sectores,
+.contenedor-servicios {
+  clear: both;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+.contenedor-sectores .lista-sectores ul,
+.contenedor-servicios .lista-sectores ul,
+.contenedor-sectores .lista-servicios ul,
+.contenedor-servicios .lista-servicios ul {
+  border: 1px solid #cecece;
+  border-right: none;
+  float: left;
+  width: 10%;
+}
+.contenedor-sectores .lista-sectores ul li,
+.contenedor-servicios .lista-sectores ul li,
+.contenedor-sectores .lista-servicios ul li,
+.contenedor-servicios .lista-servicios ul li {
+  margin: .5em;
+}
+.contenedor-sectores .lista-sectores ul li.activo a,
+.contenedor-servicios .lista-sectores ul li.activo a,
+.contenedor-sectores .lista-servicios ul li.activo a,
+.contenedor-servicios .lista-servicios ul li.activo a,
+.contenedor-sectores .lista-sectores ul li:hover a,
+.contenedor-servicios .lista-sectores ul li:hover a,
+.contenedor-sectores .lista-servicios ul li:hover a,
+.contenedor-servicios .lista-servicios ul li:hover a {
+  color: #0099cc;
+}
+.contenedor-sectores .lista-sectores ul li a,
+.contenedor-servicios .lista-sectores ul li a,
+.contenedor-sectores .lista-servicios ul li a,
+.contenedor-servicios .lista-servicios ul li a {
+  border-radius: 10px;
+  cursor: pointer;
+  display: block;
+  height: 15px;
+  overflow: hidden;
+  width: 15px;
+}
+.contenedor-sectores .lista-sectores ul li a:before,
+.contenedor-servicios .lista-sectores ul li a:before,
+.contenedor-sectores .lista-servicios ul li a:before,
+.contenedor-servicios .lista-servicios ul li a:before {
+  background: #CECECE;
+  border-radius: 5px;
+  content: ' ';
+  display: block;
+  height: 15px;
+  width: 15px;
+}
+.contenedor-sectores .lista-sectores > div,
+.contenedor-servicios .lista-sectores > div,
+.contenedor-sectores .lista-servicios > div,
+.contenedor-servicios .lista-servicios > div {
+  float: left;
+  margin-bottom: 5%;
+  position: relative;
+  width: 89%;
+}
+.contenedor-sectores .lista-sectores > div .imagen-servicio img,
+.contenedor-servicios .lista-sectores > div .imagen-servicio img,
+.contenedor-sectores .lista-servicios > div .imagen-servicio img,
+.contenedor-servicios .lista-servicios > div .imagen-servicio img {
+  height: auto;
+  width: 100%;
+}
+.contenedor-sectores .lista-sectores > div .descripcion-servicio,
+.contenedor-servicios .lista-sectores > div .descripcion-servicio,
+.contenedor-sectores .lista-servicios > div .descripcion-servicio,
+.contenedor-servicios .lista-servicios > div .descripcion-servicio {
+  background: #ffffff;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.7);
+  -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.7);
+  padding: 3%;
+  margin: -10px 0 0 -11%;
+  position: relative;
+  z-index: 10;
+}
+.contenedor-sectores .lista-sectores > div .descripcion-servicio h1,
+.contenedor-servicios .lista-sectores > div .descripcion-servicio h1,
+.contenedor-sectores .lista-servicios > div .descripcion-servicio h1,
+.contenedor-servicios .lista-servicios > div .descripcion-servicio h1 {
+  margin-bottom: .5em;
+}
+.contenedor-sectores .lista-sectores > div > a,
+.contenedor-servicios .lista-sectores > div > a,
+.contenedor-sectores .lista-servicios > div > a,
+.contenedor-servicios .lista-servicios > div > a {
+  background: #034d72;
+  bottom: 1em;
+  color: #ffffff;
+  display: block;
+  padding: .5em;
+  position: absolute;
+  right: -0.8em;
+  width: 140px;
+}
+.contiene-acordeon h1 a {
+  border-top: 1px dotted #CECECE;
+  color: #034d72;
+  display: block;
+  padding: 3% 0;
+}
+.contiene-acordeon h1 a:after {
+  content: '/';
+  float: right;
+  font-size: 1.5em;
+  font-family: 'modern_pictogramsnormal';
+  margin-top: -4px;
+}
+.contiene-acordeon h1 a.activo:after {
+  content: '-';
+}
+.contiene-acordeon .contiene-proyectos {
+  margin-bottom: 3%;
+}
+.page-experiencia .contenedor-sectores .lista-sectores > div {
+  width: 86%;
+}
+.page-experiencia .nuestra-historia {
+  clear: both;
+}
+.page-sectores .descrpcion-sectores p {
+  padding: 0;
+}
+.clientes {
+  position: relative;
+}
+.clientes .lista-sectores {
+  border-left: 1px solid #cecece;
+  border-bottom: 1px solid #cecece;
+  clear: both;
+  font-size: .85em;
+  float: left;
+  width: 130px;
+}
+.clientes .lista-sectores:first-child {
+  border-top: 1px solid #cecece;
+}
+.clientes .lista-sectores a {
+  color: #666666;
+  display: block;
+  padding: 1.2em .5em;
+}
+.clientes .lista-sectores.activo a,
+.clientes .lista-sectores:hover a {
+  color: #0288bc;
+}
+.clientes .clientes-sectores {
+  background: #F1F1F1;
+  float: right;
+  margin: -207px 2.8% 20px;
+  min-height: 245px;
+  padding: 3% 3% 0;
+  position: relative;
+  width: 52%;
+}
+.clientes .clientes-sectores img {
+  display: block;
+  box-shadow: 0 0 3px #CCC;
+  height: auto;
+  margin: 1% auto 3%;
+  width: 96%;
+}
+.clientes .clientes-sectores > a {
+  background: #EEE;
+  border: 1px solid #CCC;
+  bottom: -20px;
+  color: #666666;
+  padding: 3%;
+  position: absolute;
+  right: -13px;
+  width: 150px;
+}
+.pane-noticias-noticias,
+.slider_notas {
+  overflow: hidden;
+  position: relative;
+}
+.pane-noticias-noticias .nav-notas,
+.slider_notas .nav-notas {
+  bottom: 40px;
+  left: 105px;
+  position: absolute;
+  z-index: 90;
+}
+.pane-noticias-noticias .nav-notas li,
+.slider_notas .nav-notas li {
+  float: left;
+}
+.pane-noticias-noticias .nav-notas li a,
+.slider_notas .nav-notas li a {
+  background: #666666;
+  border-radius: 10px;
+  display: block;
+  height: 15px;
+  margin: .5em;
+  width: 15px;
+}
+.pane-noticias-noticias .nav-notas li a.activo,
+.slider_notas .nav-notas li a.activo {
+  background: #4aba82;
+}
+.page-noticias .contenedor-noticias,
+.page-news .contenedor-noticias {
+  float: left;
+  width: 38%;
+}
+.page-noticias .contenedor-noticias ul,
+.page-news .contenedor-noticias ul {
+  display: none;
+}
+.page-noticias .contenedor-noticias .noticia,
+.page-news .contenedor-noticias .noticia {
+  border: 1px solid #cecece;
+  margin-bottom: 1em;
+  padding: 3%;
+}
+.page-noticias .contenedor-noticias .noticia .titulo-noticia a,
+.page-news .contenedor-noticias .noticia .titulo-noticia a {
+  color: #666;
+  display: block;
+  font-family: 'museo_slab500';
+  margin-bottom: .5em;
+}
+.page-noticias .contenedor-noticias .noticia .titulo-noticia a:hover,
+.page-news .contenedor-noticias .noticia .titulo-noticia a:hover {
+  color: #4aba82;
+}
+.page-noticias .contenedor-noticias .noticia .descripcion-noticia,
+.page-news .contenedor-noticias .noticia .descripcion-noticia {
+  font-size: .95em;
+}
+.page-noticias .notaActiva,
+.page-news .notaActiva {
+  display: block;
+  border: 1px solid #cecece;
+  float: right;
+  margin-bottom: 1em;
+  overflow: hidden;
+  padding: 2%;
+}
+.page-noticias .notaActiva .detalle-titulo,
+.page-news .notaActiva .detalle-titulo {
+  color: #4aba82;
+  display: block;
+  font-family: 'museo_slab500';
+  margin-bottom: 1em;
+}
+.page-noticias .notaActiva img,
+.page-news .notaActiva img {
+  height: auto;
+  margin-bottom: 1em;
+  width: 100%;
+}
+.page-noticias .nav-notas,
+.page-news .nav-notas {
+  display: none;
+}
+.page-servicios .mas-servicios,
+.page-services .mas-servicios {
+  background: #f1f1f1;
+  clear: both;
+  float: left;
+  margin-bottom: 1em;
+  padding: 1.5%;
+  width: 100%;
+}
+.page-servicios .mas-servicios ul,
+.page-services .mas-servicios ul {
+  display: none;
+  padding: 0 0 0 20px;
+}
+.page-servicios .mas-servicios ul li,
+.page-services .mas-servicios ul li {
+  list-style: disc;
+  float: left;
+  margin-right: 4%;
+  width: 46%;
+}
+.page-servicios .mas-servicios ul li a,
+.page-services .mas-servicios ul li a {
+  border-radius: 10px;
+  cursor: pointer;
+  display: block;
+  height: 15px;
+  overflow: hidden;
+  width: 15px;
+}
+.page-servicios .mas-servicios ul li a:before,
+.page-services .mas-servicios ul li a:before {
+  background: #CECECE;
+  border-radius: 5px;
+  content: ' ';
+  display: block;
+  height: 15px;
+  width: 15px;
+}
+.page-servicios .otroServicio,
+.page-services .otroServicio {
+  border: 1px solid #cecece;
+  display: block;
+  float: left;
+  height: 190px;
+  margin-bottom: 1em;
+  overflow: hidden;
+  padding: 1.5%;
+  width: 96%;
+}
+.page-servicios .otroServicio > div:first-child,
+.page-services .otroServicio > div:first-child {
+  font-family: 'museo_slab500';
+  margin-bottom: .5em;
+}
+.page-servicios .otroServicio > div:last-child,
+.page-services .otroServicio > div:last-child {
+  background: #f1f1f1;
+  height: 141px;
+  overflow: hidden;
+  padding: 1.5%;
+}
+.page-servicios .lista-proyectos,
+.page-services .lista-proyectos {
+  clear: both;
+  overflow: hidden;
+}
+.page-servicios .lista-proyectos li,
+.page-services .lista-proyectos li {
+  border: 1px solid #cecece;
+  border-left-width: 0;
+  float: left;
+  margin-bottom: .5em;
+  padding: .5em;
+}
+.page-servicios .lista-proyectos li:first-child,
+.page-services .lista-proyectos li:first-child,
+.page-servicios .lista-proyectos li:last-child,
+.page-services .lista-proyectos li:last-child {
+  border-left-width: 1px;
+}
+.content > div.form-item,
+.links.inline .translation_en {
+  display: none;
+}
+.webform-client-form {
+  margin: 0 auto;
+  width: 40%;
+}
+.webform-client-form label {
+  font-family: 'museo_slab500';
+  margin-bottom: .5em;
+}
+.webform-client-form input,
+.webform-client-form textarea {
+  border: 1px solid #cecece;
+  font-family: 'lane_-_narrowregular';
+  font-size: 16px;
+  padding: 1%;
+  width: 98%;
+}
+.webform-client-form textarea {
+  width: 100%;
+}
+.webform-client-form input[type=submit] {
+  background: #0288bc;
+  color: #ffffff;
+  margin-top: .5em;
+  padding: .5em;
+  width: 101%;
+}
+.footer {
+  background: #f1f1f1;
+  color: #666666;
+  -webkit-box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.15);
+  font-size: .9em;
+  margin: -2px auto 0;
+  padding: 3% 2%;
+  max-width: 980px;
+  width: 96%;
+}
+.footer > div {
+  margin-bottom: 2%;
+}
+.footer > div.contacto {
+  font-family: 'museo_slab500';
+  text-transform: uppercase;
+}
+.footer > div.contacto a {
+  color: #666666;
+}
+.footer > div.ciudad1,
+.footer > div.ciudad2 {
+  font-size: .9em;
+  margin: 3% 0;
+}
+.footer > div.ciudad1 p,
+.footer > div.ciudad2 p {
+  color: #0099cc;
+  font-weight: bold;
+  margin-bottom: 2%;
+}
+.footer > div.ciudad1 .dir:before,
+.footer > div.ciudad2 .dir:before,
+.footer > div.ciudad1 .tel:before,
+.footer > div.ciudad2 .tel:before {
+  content: ',';
+  font-family: 'modern_pictogramsnormal';
+  font-size: 1.5em;
+  vertical-align: -1px;
+  -webkit-font-smoothing: antialiased;
+}
+.footer > div.ciudad1 .tel:before,
+.footer > div.ciudad2 .tel:before {
+  content: 'N';
+}
+.footer > div.contacto-mail:before {
+  content: 'm';
+  font-family: 'modern_pictogramsnormal';
+  font-size: 1.5em;
+  vertical-align: -1px;
+  -webkit-font-smoothing: antialiased;
+}
+.footer > div.trabaje-nosotros {
+  background: #0288bc;
+  margin: 0 -2% -3% -2%;
+  text-align: center;
+}
+.footer > div.trabaje-nosotros a {
+  color: #ffffff;
+  display: block;
+  padding: 5%;
+}
+.footer > div.trabaje-nosotros a:before {
+  content: 'K';
+  font-family: 'modern_pictogramsnormal';
+  font-size: 1.5em;
+  vertical-align: -1px;
+  -webkit-font-smoothing: antialiased;
+}
+.footer > div.redes {
+  overflow: hidden;
+}
+.footer > div.redes a {
+  float: left;
+  margin-right: 5px;
+  background: url('../images/redes.png') no-repeat 0 0;
+  display: block;
+  height: 20px;
+  text-indent: -9999px;
+  width: 20px;
+}
+.footer > div.redes a.tw {
+  background-position: 0 -34px;
+}
+.footer > div.redes a.ln {
+  background-position: 0 -70px;
+}
+/*Mobile grandes*/
+@media (min-width: 480px) {
+  #header .block-menu-personalizado ul {
+    width: 61.8%;
+  }
+  .clientes .clientes-sectores {
+    width: 62%;
+  }
+  .clientes .clientes-sectores img {
+    float: left;
+    margin: 1% 1.5% 3%;
+    width: 46%;
+  }
+  #footer .contacto {
+    margin: 0;
+  }
+  #footer .ciudad1,
+  #footer .ciudad2,
+  #footer .contacto-mail,
+  #footer .redes {
+    float: left;
+    width: 50%;
+  }
+  #footer .trabaje-nosotros {
+    clear: both;
+  }
+  #footer .trabaje-nosotros a {
+    padding: 2%;
+  }
+}
+/*Tablet*/
+@media (min-width: 768px) {
+  #header #btn-movil {
+    display: none;
+  }
+  #header .block-menu-personalizado ul {
+    box-shadow: none;
+    display: block;
+    height: 32px;
+    margin-left: 180px;
+    position: inherit;
+    width: auto;
+  }
+  #header .block-menu-personalizado ul li {
+    border-left: 1px solid #22a3c6;
+    float: left;
+  }
+  #header .block-menu-personalizado ul li a {
+    display: block;
+    padding: 10px 14px;
+  }
+  #header .block-menu-personalizado ul li:first-child {
+    border: none;
+  }
+  .contenedor-sectores .lista-sectores ul,
+  .contenedor-servicios .lista-sectores ul,
+  .contenedor-sectores .lista-servicios ul,
+  .contenedor-servicios .lista-servicios ul {
+    width: 20%;
+  }
+  .contenedor-sectores .lista-sectores ul li,
+  .contenedor-servicios .lista-sectores ul li,
+  .contenedor-sectores .lista-servicios ul li,
+  .contenedor-servicios .lista-servicios ul li {
+    border-top: 1px solid #cecece;
+    margin: 0;
+    padding: .5em;
+  }
+  .contenedor-sectores .lista-sectores ul li:first-child,
+  .contenedor-servicios .lista-sectores ul li:first-child,
+  .contenedor-sectores .lista-servicios ul li:first-child,
+  .contenedor-servicios .lista-servicios ul li:first-child {
+    border: none;
+  }
+  .contenedor-sectores .lista-sectores ul li a,
+  .contenedor-servicios .lista-sectores ul li a,
+  .contenedor-sectores .lista-servicios ul li a,
+  .contenedor-servicios .lista-servicios ul li a {
+    border-radius: 0;
+    display: table-cell;
+    height: 50px;
+    vertical-align: middle;
+    width: auto;
+  }
+  .contenedor-sectores .lista-sectores ul li a:before,
+  .contenedor-servicios .lista-sectores ul li a:before,
+  .contenedor-sectores .lista-servicios ul li a:before,
+  .contenedor-servicios .lista-servicios ul li a:before {
+    display: none;
+  }
+  .contenedor-sectores .lista-sectores > div,
+  .contenedor-servicios .lista-sectores > div,
+  .contenedor-sectores .lista-servicios > div,
+  .contenedor-servicios .lista-servicios > div {
+    margin-bottom: 3%;
+    width: 79%!important;
+  }
+  .contenedor-sectores .lista-sectores > div .descripcion-servicio,
+  .contenedor-servicios .lista-sectores > div .descripcion-servicio,
+  .contenedor-sectores .lista-servicios > div .descripcion-servicio,
+  .contenedor-servicios .lista-servicios > div .descripcion-servicio {
+    margin: 0;
+    padding: 2%;
+    position: absolute;
+    right: -21%;
+    top: 12%;
+    width: 28%;
+  }
+  .contenedor-sectores .lista-sectores > div .descripcion-servicio,
+  .contenedor-servicios .lista-servicios > div .descripcion-servicio {
+    margin-top: -10px;
+    position: relative;
+    right: 25%;
+    width: 121.3%;
+  }
+  .contenedor-servicios .lista-servicios > div .descripcion-servicio {
+    right: 0;
+    width: 96.3%;
+  }
+  .contiene-acordeon h1 a {
+    padding: 1.5% 0;
+  }
+  .contiene-acordeon .contiene-proyectos {
+    margin-bottom: 1.5%;
+  }
+  #main {
+    padding: 3% 1.8%;
+  }
+  .page-inicio .slider_notas {
+    float: left;
+  }
+  .page-inicio .pane-content > section > div:last-child {
+    float: left;
+    margin: 0 0 0 2%;
+    min-height: 179px;
+    overflow: hidden;
+    width: 42%;
+  }
+  .page-inicio .pane-content > section > div:last-child h2 {
+    margin-bottom: 3%;
+  }
+  .page-inicio .pane-content > section > div:last-child,
+  .page-inicio .slider_notas,
+  .descrpcion-sectores,
+  .nuestra-historia {
+    padding: 1.5%;
+  }
+  .page-inicio .pane-content > section > div:last-child h2,
+  .page-inicio .slider_notas h2,
+  .descrpcion-sectores h2,
+  .nuestra-historia h2,
+  .page-inicio .pane-content > section > div:last-child h1,
+  .page-inicio .slider_notas h1,
+  .descrpcion-sectores h1,
+  .nuestra-historia h1 {
+    margin-bottom: 3%;
+  }
+  .page-inicio .pane-content > section > div:last-child p,
+  .page-inicio .slider_notas p,
+  .descrpcion-sectores p,
+  .nuestra-historia p {
+    padding: 1.5%;
+  }
+  .page-inicio .slider_notas {
+    padding-bottom: 5%;
+  }
+  .page-sectores .titulo-descripcion {
+    float: left;
+    width: 60%;
+  }
+  .clientes .clientes-sectores {
+    width: 73%;
+  }
+  .clientes .clientes-sectores img {
+    float: left;
+    margin: 1% 1.5% 3%;
+    width: 30%;
+  }
+  .clientes .clientes-sectores > a {
+    padding: 1.5%;
+  }
+  .page-noticias .contenedor-noticias ul,
+  .page-news .contenedor-noticias ul {
+    display: block;
+    overflow: hidden;
+    padding-bottom: 30px !important;
+  }
+  .page-noticias .notaActiva,
+  .page-news .notaActiva {
+    display: none;
+    height: 513px;
+    margin-bottom: 40px;
+    overflow-y: auto;
+    width: 55%;
+  }
+  .page-noticias .notaActiva.active,
+  .page-news .notaActiva.active {
+    display: block;
+  }
+  .page-noticias .nav-notas,
+  .page-news .nav-notas {
+    bottom: 0;
+    display: block;
+  }
+  .page-servicios .otroServicio,
+  .page-services .otroServicio {
+    width: 45%;
+  }
+}
+/*Tablet grande*/
+@media (min-width: 840px) {
+  #footer {
+    overflow: hidden;
+  }
+  #footer .contacto {
+    margin: 0;
+  }
+  #footer .ciudad1,
+  #footer .ciudad2,
+  #footer .contacto-mail,
+  #footer .redes {
+    display: inline-block;
+    float: none;
+    vertical-align: middle;
+    width: 20%;
+  }
+  #footer .ciudad1,
+  #footer .ciudad2 {
+    width: 28%;
+  }
+}
+/*desktop grande*/
+@media (min-width: 1024px) {
+  #header h1 a {
+    left: 50%;
+    margin-left: -500px;
+  }
+  #header .block-menu-personalizado {
+    left: 50%;
+    margin-left: -490px;
+    max-width: 990px;
+    position: relative;
+  }
+  #header .block-menu-personalizado span:nth-child(2) {
+    right: 111px;
+  }
+  #header .block-menu-personalizado span:nth-child(2) a {
+    background-position: 10px 14px;
+    padding-left: 36px;
+    padding-top: 14px;
+    text-indent: 0;
+    width: 31px;
+  }
+  #header .block-menu-personalizado span:last-child {
+    width: 110px;
+  }
+  #header .block-menu-personalizado span:last-child a {
+    color: #ffffff;
+    display: block;
+    padding-top: 12px;
+  }
+  #header .block-menu-personalizado span:last-child a:before {
+    float: left;
+    line-height: .5;
+    padding-top: 0;
+  }
+  #main {
+    border: 1px solid #CECECE;
+    border-bottom: none;
+    padding: 3% 20px;
+  }
+  .contenedor-sectores .lista-sectores ul,
+  .contenedor-servicios .lista-sectores ul,
+  .contenedor-sectores .lista-servicios ul,
+  .contenedor-servicios .lista-servicios ul {
+    width: 17%;
+  }
+  .contenedor-sectores .lista-sectores > div,
+  .contenedor-servicios .lista-sectores > div,
+  .contenedor-sectores .lista-servicios > div,
+  .contenedor-servicios .lista-servicios > div {
+    margin-bottom: 3%;
+    width: 70%!important;
+  }
+  .contenedor-sectores .lista-sectores > div .descripcion-servicio,
+  .contenedor-servicios .lista-sectores > div .descripcion-servicio,
+  .contenedor-sectores .lista-servicios > div .descripcion-servicio,
+  .contenedor-servicios .lista-servicios > div .descripcion-servicio {
+    height: 215px;
+    position: absolute;
+    right: -18%;
+    width: 35%;
+  }
+  .contenedor-sectores .lista-sectores > div .descripcion-servicio p,
+  .contenedor-servicios .lista-sectores > div .descripcion-servicio p,
+  .contenedor-sectores .lista-servicios > div .descripcion-servicio p,
+  .contenedor-servicios .lista-servicios > div .descripcion-servicio p {
+    height: 230px;
+    overflow: hidden;
+    overflow-y: visible;
+  }
+  .contenedor-sectores .lista-sectores > div .descripcion-servicio img,
+  .contenedor-servicios .lista-sectores > div .descripcion-servicio img,
+  .contenedor-sectores .lista-servicios > div .descripcion-servicio img,
+  .contenedor-servicios .lista-servicios > div .descripcion-servicio img {
+    height: auto !important;
+    width: 100% !important;
+  }
+  .page-inicio .contiene-informacion {
+    float: right;
+    position: relative;
+    width: 86%;
+  }
+  .page-inicio .contiene-informacion .pestanas {
+    left: -160px;
+    position: absolute;
+    width: 140px;
+  }
+  .page-inicio .contiene-informacion .pestanas a {
+    border-bottom: 1px solid #CECECE;
+    margin-bottom: 10px;
+    width: 90px;
+  }
+  .page-inicio .contiene-informacion .pestanas a.activo {
+    border-right-color: transparent;
+  }
+  .page-inicio .contiene-informacion .pestanas a:after {
+    top: 21%;
+    border-top-color: transparent;
+    border-left-color: #f1f1f1;
+    left: 113%;
+  }
+  .page-inicio .slider_notas {
+    margin-left: 14.2%;
+    margin-bottom: 0;
+    padding-bottom: 4.2%;
+  }
+  .page-inicio .contenedor-sectores .lista-sectores > div .descripcion-servicio p {
+    height: 100px;
+  }
+  .page-inicio .pane-content > section {
+    clear: both;
+    overflow: hidden;
+    position: relative;
+  }
+  .page-inicio .pane-content > section .pestanas {
+    left: 0;
+    position: absolute;
+    top: 70px;
+  }
+  .page-inicio .pane-content > section .pestanas a:after {
+    border-color: rgba(136, 183, 213, 0);
+    border-left-color: #4aba82;
+    left: 113%;
+    top: 18%;
+  }
+  .page-inicio .pane-content > section > div:last-child {
+    width: 39.3%;
+  }
+  .page-experiencia .contenedor-sectores {
+    float: left;
+    width: 74%;
+  }
+  .page-experiencia .contenedor-sectores .lista-sectores ul {
+    width: 20%;
+  }
+  .page-experiencia .contenedor-sectores .lista-sectores > div {
+    width: 79% !important;
+  }
+  .page-experiencia .nuestra-historia {
+    clear: none;
+    float: right;
+    width: 22%;
+  }
+  .clientes {
+    padding: 1.5% 1.5% 0;
+  }
+  .clientes .lista-sectores {
+    clear: none;
+    border: 1px solid #cecece;
+    border-width: 1px 1px 0 0;
+    font-size: .95em;
+    max-width: 130px;
+    width: auto;
+  }
+  .clientes .lista-sectores:first-child {
+    border-left-width: 1px;
+  }
+  .clientes .lista-sectores a {
+    display: table-cell;
+    height: 32px;
+    vertical-align: middle;
+    padding: .5em;
+    text-align: center;
+  }
+  .clientes .clientes-sectores {
+    margin: 0;
+    padding: 1.5% 1.5% 0;
+    width: 97%;
+  }
+  .clientes .clientes-sectores img {
+    float: left;
+    margin: 1% 1.5% 3%;
+    width: 20%;
+  }
+  .clientes .clientes-sectores > a {
+    padding: 1.5%;
+  }
+  .page-noticias .nav-notas,
+  .page-news .nav-notas {
+    bottom: 40px;
+  }
+  .page-servicios .mas-servicios,
+  .page-services .mas-servicios {
+    float: left;
+    min-height: 192px;
+    width: 55%;
+  }
+  .page-servicios .mas-servicios h2,
+  .page-services .mas-servicios h2 {
+    margin-bottom: 1em;
+  }
+  .page-servicios .mas-servicios ul,
+  .page-services .mas-servicios ul {
+    display: block;
+  }
+  .page-servicios .otroServicio,
+  .page-services .otroServicio {
+    background: #FFF;
+    display: none;
+    margin-left: -2%;
+    width: 40.75%;
+  }
+  #footer .footer {
+    padding: 10px 10px 5px;
+  }
+  #footer .footer > * {
+    display: inline-block;
+    margin: 0;
+    vertical-align: middle;
+    width: 13%;
+  }
+  #footer .footer .ciudad2,
+  #footer .footer .ciudad1 {
+    margin: 0;
+    width: 22%;
+  }
+  #footer .footer .contacto-mail {
+    width: 16%;
+  }
+  #footer .footer .redes {
+    margin-right: 1%;
+    width: 8%;
+  }
+  #footer .footer .trabaje-nosotros {
+    margin: -20px -10px;
+    padding: 36px 0;
+    width: 18%;
+  }
+}
+
+.direccion-footer-bta{
+    cursor: pointer; cursor: hand;
+}

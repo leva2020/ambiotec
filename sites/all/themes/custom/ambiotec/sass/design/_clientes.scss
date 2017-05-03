@@ -1,0 +1,69 @@
+.clientes_ambiotec{
+	background: #ECF0F1;
+	ul{
+		border-bottom: 1px solid $mainColorTitle;
+		border-top: 1px solid $mainColorTitle;
+		padding: 10px 0;
+		li{
+			display: inline-block;
+			text-align: center;
+			text-transform: capitalize;
+			width: 190px;
+			a{
+				color: #1c1c1c;
+				cursor: pointer;
+				font-family: $mainFontLight;
+				font-size: 13px;
+				text-transform: uppercase;
+				&:hover{
+					color:$mainColorTitle;
+				}
+			}
+		}
+	}
+	.grilla-clientes{
+		ul{
+			border: 0;
+			li{
+				margin: 10px 0 40px;
+				width: calc(95%/5);
+			}
+		}
+	}
+}
+
+@media (min-width: 768px) and (max-width:1024px){
+	.clientes_ambiotec{
+		ul{
+			li{
+				width: 140px;
+			}
+		}
+		.grilla-clientes{
+			ul{
+				li{
+					margin-right: 1%;
+					width: calc(92%/4);
+				}
+			}
+		}
+	}
+}
+
+@media (max-width:767px){
+	.clientes_ambiotec{
+		ul{
+			li{
+				margin-top: 5px;
+				width: calc(95%/2);
+			}
+		}
+		.grilla-clientes{
+			ul{
+				li{
+					width: calc(98%/2);
+				}
+			}
+		}
+	}
+}

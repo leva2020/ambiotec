@@ -1,0 +1,173 @@
+.servicios_ambiotec{
+	background: url("../images/bkg.png") repeat 0 0;
+	h1{
+		border-bottom: 1px solid #BDC3C7;
+		color: $mainColorTitle;
+		width: 980px;
+	}
+	div{
+		background: url("../images/border.png") repeat-x 0 0;
+		min-height: 280px;
+		overflow: hidden;
+		padding: 30px 0;
+		position: relative;
+		img{
+			border-radius: 100%;
+			float: right;
+			position: absolute;
+			right: 5px;
+			top: 40px;
+		}
+		a{
+			color: $secondaryColorTxt;
+		}
+		h2{
+			float: left;
+			font-family: $mainFontLight;
+			font-size: 32px;
+			line-height: 40px;
+			margin: 10px 0 35px;
+			padding-left: 70px;
+			padding-top: 40px;
+			text-transform: uppercase;
+			width: 320px;			
+		}
+		p{
+			font-family: $mainFontItalic;
+			font-size: 16px;			
+			line-height: 22px;
+			padding-left: 70px;
+			width: 320px;
+			a{
+				color: $mainColorTxt;
+			}
+		}
+		&:after{
+			content: '';
+			background: url("../images/border-circle2.png") no-repeat 0 0;
+			display: block;
+			height: 16px;
+			left: 410px;
+			position: absolute;
+			top: 165px;
+			width: 296px;
+		}
+		&:nth-child(2n){
+			img{
+				float: left;
+				position: static;
+			}
+			h2,
+			p{
+				float: left;
+				padding-left: 308px;
+			}
+			&:after{
+				background: url("../images/border-circle.png") no-repeat 0 0;
+				left: 275px;
+			}
+		}			
+		&:nth-child(2){
+			background: none;			
+		}			
+	}
+	.servicio-home{
+		width: 980px;
+		&:hover{
+			h2{
+				a{
+					color: $mainBkgColor;
+				}
+			}
+			img{
+				box-shadow: 1px 2px 0px 2px $mainBkgColor;
+			}	
+			&:after{
+				content: '';
+				background: url("../images/border-circle2-blue.png") no-repeat 0 0;
+			}
+			&:nth-child(2n){
+				&:after{
+					background: url("../images/border-circle-blue.png") no-repeat 0 0;
+				}
+			}	
+		}
+	}
+}
+@media (min-width: 768px) and (max-width:1024px){
+	.servicios_ambiotec{
+		.servicio-home,
+		h1{
+			width: 747px;
+		}
+		div{
+			img{
+				height: 250px;
+				width: 250px;
+			}
+			h2,
+			p{
+				padding-left: 15px;
+			}
+			&:after{		
+				left: 360px;		
+				width: 135px;
+			}
+			&:nth-child(2n){
+				h2,
+				p{
+					padding-left: 140px;
+				}
+				&:after{
+					background-position: right 0;
+					left: 250px;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width:767px){
+	.servicios_ambiotec{
+		h1{
+			width: 320px;
+		}
+		div{
+			img{
+				height: 100px;
+				width: 100px;
+			}
+			&:after{
+				background: none;
+			}
+			h2{
+				margin-left: 4px;
+				min-height: 80px;
+				padding: 0;
+				width: 215px;
+			}
+			p{
+				float: left;
+				padding: 0;
+			}
+			&:nth-child(2n){
+				&:after{
+					background: none;
+				}
+				h2{
+					margin-left: 4px;
+					padding: 0;
+					width: 215px;
+				}
+				p{
+					padding: 0;
+				}
+			}
+		}
+		.servicio-home{
+			padding: 20px 0;
+			width: 320px;
+		}
+	}
+
+}

@@ -1,0 +1,108 @@
+.noticias_ambiotec{
+	background: $secondaryColor;
+	padding-bottom: 40px;
+	h1{
+		color: $thirdColor !important;
+		border-bottom: 1px solid $thirdColor;
+	}
+	ul{
+		li{
+			padding-top: 20px;
+			p{				
+				margin: 0 auto;
+				width: 660px;				
+			}
+			a{
+				color: $thirdColor;
+				font-family: $secondaryFont;
+				font-size: 38px;
+				font-style: italic;
+				&:before{
+					content: "\e605";
+					color: $thirdColor;
+					font-family: $iconFont;
+					position: absolute;
+					top: 0;
+					left: 110px;
+				}
+				p{
+					padding-left: 50px;
+					&:hover{
+						text-decoration: underline;
+					}
+				}
+			}
+			p{
+				a{
+					&:before{
+						content: '';
+					}
+				}
+			}
+			.credito-nota{
+				float: right;
+				font-family: $mainFontItalic;
+				font-size: 16px;
+			}
+		}
+	}
+	.bx-controls{
+		.bx-pager-item{
+			display: inline-block;
+			width: auto;
+			a{
+				background: #ECF0F1;
+				display: inline-block;
+				&.active,
+				&:hover{
+					background: $thirdColor;;
+				}
+			}
+		}
+	}
+	.bx-wrapper{
+		.bx-pager{
+			position: static;
+		}
+	} 
+	h1{
+		width: 1000px;
+	}
+}
+
+@media (min-width: 768px) and (max-width:1024px){
+	.noticias_ambiotec{
+		h1{
+			width: 747px;
+		}
+		ul{
+			li{
+				a{
+					p{
+						padding-left: 155px;
+					}
+				}
+			}
+		}
+	} 
+}
+
+@media (max-width:767px){
+	.noticias_ambiotec{
+		h1{
+			width: 320px;
+		}
+		ul{
+			li{
+				a{
+					&:before{
+						left: 0;
+					}
+				}
+				p{
+					width: 320px;
+				}
+			}
+		}
+	}
+}

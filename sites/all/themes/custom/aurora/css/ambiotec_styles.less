@@ -1,0 +1,1225 @@
+@import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700);
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+a{
+    text-decoration: none;
+}
+/*fuentes*/
+@font-face {
+    font-family: 'lane_-_narrowregular';
+    src: url('fonts/lanenar_-webfont.eot');
+    src: url('fonts/lanenar_-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/lanenar_-webfont.woff') format('woff'),
+         url('fonts/lanenar_-webfont.ttf') format('truetype'),
+         url('fonts/lanenar_-webfont.svg#lane_-_narrowregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'museo_slab500';
+    src: url('fonts/Museo_Slab_500_2-webfont.eot');
+    src: url('fonts/Museo_Slab_500_2-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Museo_Slab_500_2-webfont.woff') format('woff'),
+         url('fonts/Museo_Slab_500_2-webfont.ttf') format('truetype'),
+         url('fonts/Museo_Slab_500_2-webfont.svg#museo_slab500') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'modern_pictogramsnormal';
+    src: url('fonts/modernpics-webfont.eot');
+    src: url('fonts/modernpics-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/modernpics-webfont.woff') format('woff'),
+         url('fonts/modernpics-webfont.ttf') format('truetype'),
+         url('fonts/modernpics-webfont.svg#modern_pictogramsnormal') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+/*Variable*/
+@fuenteBase: 'lane_-_narrowregular';
+@fuenteTitulos: 'museo_slab500';
+@fontIco: 'modern_pictogramsnormal';
+@borde: 1px solid #CECECE;
+@blanco: #fff;
+@azulClaro: #22A3C6;
+@azulBase: #0099CC;
+@azulMedio: #0288BC;
+@azulOscuro: #034D72;
+@grisClaro: #EFEFEF;
+@grisBase: #F1F1F1;
+@grisOscuro: #666;
+@verdeBase: #4ABA82;
+
+/*Inicio*/
+h1,h2,h3,.titulo-sectores{
+    font-family: @fuenteTitulos;
+}
+body {
+  background: #F9F9F9;
+  color: #666;
+  font-family: @fuenteBase;
+  font-size: 16px;
+  line-height: 1.2;
+  margin: 0;
+  font-size: 100%;
+}
+    #header{
+        background: @azulBase;
+        box-shadow: 0 2px 3px rgba(0, 0, 0, 0.35);
+        padding: 5px 0 5px;
+        position: relative;
+        h1{
+            a{
+                background: url("../images/ambiotec.jpg") no-repeat scroll 0 0 transparent;
+                display: block;
+                height: 50px;
+                left: 0;
+                position: absolute;
+                top: 0;
+                width: 183px;
+                z-index: 90;
+            }
+        }
+        #btn-movil{
+            margin-left: 187px;
+            padding: .5em;
+            &:after{
+                content: 'Z';
+                font-family: @fontIco;
+                color: @blanco;
+                font-size: 2em;
+            }
+        }
+        .block-menu-personalizado{
+            min-height: 27px;
+            max-width: 800px;
+            position: relative;
+            // overflow: hidden;
+            ul{
+                // display: none;
+                // margin-left: 180px;
+                background: @azulBase;
+                box-shadow: 0 2px 6px #555;
+                -moz-box-shadow: 0 2px 6px #555;
+                -o-box-shadow: 0 2px 6px #555;
+                -webkit-box-shadow: 0 2px 6px #555;
+                display: none;
+                height: 160px;
+                margin: 0;
+                position: absolute;
+                top: 35px;
+                right: 0;
+                width: 42.7%;
+                z-index: 90;
+                &.activo{
+                    display: block;
+                }
+                li{
+                    a{  
+                        color: @blanco;
+                        display: block;
+                        margin-top: -3px;
+                        padding: .5em;
+                        text-transform: uppercase;
+                        &:hover{
+                            background: @azulMedio;
+                        }
+                    }
+                }
+            }
+            span{
+                background: @azulMedio;
+                display: block;
+                height: 40px;
+                right: 30px;
+                top: -4px;
+                position: absolute;
+                a{
+                    color: @blanco;
+                    &.idioma-eng{
+                        background: url('../images/banderas.png') no-repeat center 13px;
+                        display: block;
+                        height: 14px;
+                        padding: .7em;
+                        text-indent: -9999px;
+                        width: 20px;
+                    }
+                    &.idioma-esp{
+                        background: url('../images/banderas.png') no-repeat center -15px;
+                        display: block;
+                        height: 14px;
+                        padding: .7em;
+                        text-indent: -9999px;
+                        width: 20px;
+                    }
+                }
+                &:last-child{
+                    right: 0;
+                    width: 34px;
+                    a{
+                        color: transparent;
+                        &:before{
+                            color: @blanco;
+                            content: 'm';
+                            display: block;
+                            font-size: 1.7em;
+                            font-family: @fontIco;
+                            padding: .2em;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    #main{
+        background: @blanco;
+        margin: 0 auto;
+        max-width: 958px;
+        padding: 5% 2%;
+        width: 96%;
+    }
+    .page-inicio .pane-content >section >div:last-child,
+    .page-inicio .slider_notas,
+    .descrpcion-sectores,
+    .nuestra-historia{
+        border: @borde;
+        padding: 3%;
+        h2, h1{
+            color: @azulOscuro;
+            font-size: 1.1em;
+            margin-bottom: 3%;
+        }
+        p{
+            background: @grisBase;
+            padding: 3%;
+        }
+    }
+    .page-inicio .slider_notas{
+        margin: 0 auto 5%;
+        max-width: 360px;
+        padding-bottom: 10%;
+        overflow: hidden;
+        width: 93.5%;
+        h2{
+            color: @verdeBase;
+        }
+        p{
+            background: transparent;
+            padding: 0;
+        }
+        .slide{
+            width: 1800px;
+            li{
+                float: left;
+                margin-right: 3%;
+                width: 350px;
+            }
+        }
+        .nav-notas{
+            bottom: 3px;
+        }
+    }
+    .descrpcion-sectores{
+        p{
+            background: transparent;
+            margin-bottom: 3%;
+            padding: 0;
+        }
+    }
+    .descrpcion-sectores+.titulo-sectores{
+        margin: 3% 0;
+    }
+    .pestanas>a{
+        background: #F4F4F4;
+        color: #B6B6B6;
+        border: @borde;
+        border-bottom: none;
+        display: block;
+        float: right;
+        font-family: @fuenteTitulos;
+        margin: 0 3px 0 5px;
+        text-transform: uppercase;
+        padding: 1em;
+        position: relative;
+        
+        &.activo,
+        &:hover{
+            background: @grisBase;
+            color: @azulMedio;
+            &:after{
+                top: 100%;
+                border: solid transparent;
+                content: " ";
+                height: 0;
+                width: 0;
+                position: absolute;
+                pointer-events: none;
+                border-color: rgba(255, 255, 255, 0);
+                border-top-color: @grisBase;
+                border-width: 15px;
+                left: 50%;
+                margin-left: -15px;
+                z-index: 9;
+            }
+        }
+        &.pestana-noticias{
+            background: @verdeBase;
+            color: @blanco;
+            &:after{
+                top: 100%;
+                border: solid transparent;
+                content: " ";
+                height: 0;
+                width: 0;
+                position: absolute;
+                pointer-events: none;
+                border-color: rgba(255, 255, 255, 0);
+                border-top-color: @verdeBase;
+                border-width: 15px;
+                left: 50%;
+                margin-left: -15px;
+                z-index: 9;
+            }
+        }
+    }
+    .contenedor-sectores,
+    .contenedor-servicios{
+        clear: both;
+        margin-bottom: 30px;
+        overflow: hidden;
+        .lista-sectores,
+        .lista-servicios{
+            ul{
+                border: @borde;
+                border-right: none;
+                float: left;
+                width: 10%;
+                li{
+                    margin: .5em;
+                    &.activo,
+                    &:hover{
+                        a{
+                            color: @azulBase;
+                            // font-weight: bold;
+                        }
+                    }
+                    a{
+                        border-radius: 10px;
+                        cursor: pointer;
+                        display: block;
+                        height: 15px;
+                        overflow: hidden;
+                        width: 15px;
+                        &:before{
+                            background: #CECECE;
+                            border-radius: 5px;
+                            content: ' ';
+                            display: block;
+                            height: 15px;
+                            width: 15px;
+                        }
+                    }
+                }
+            }
+            >div{
+                float: left;
+                margin-bottom: 5%;
+                position: relative;
+                width: 89%;
+                .imagen-servicio{
+                    img{
+                        height: auto;
+                        width: 100%;
+                    }
+                }
+                .descripcion-servicio{
+                    background: @blanco;
+                    box-shadow: 0 0 2px rgba(0, 0, 0, 0.7);
+                    -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.7);
+                    padding: 3%;
+                    margin: -10px 0 0 -11%;
+                    position: relative;
+                    z-index: 10;
+                    h1{
+                        margin-bottom: .5em;
+                    }
+                }
+                >a{
+                    background: @azulOscuro;
+                    bottom: 1em;
+                    color: @blanco;
+                    display: block;
+                    padding: .5em;
+                    position: absolute;
+                    right: -.8em;
+                    width: 140px;
+                }
+            }
+        }
+    }
+    .contiene-acordeon{
+        h1 a{
+            border-top: 1px dotted #CECECE;
+            color: @azulOscuro;
+            display: block;
+            padding: 3% 0;
+            &:after{
+                content: '/';
+                float: right;
+                font-size: 1.5em;
+                font-family: @fontIco;
+                margin-top: -4px;
+            }
+            &.activo{
+                &:after{
+                    content: '-';
+                }
+            }
+        }
+        .contiene-proyectos{
+            margin-bottom: 3%;
+        }
+    }
+    .page-experiencia{
+        .contenedor-sectores .lista-sectores > div{
+            width: 86%;
+        }
+        .nuestra-historia{
+            clear: both;
+        }
+    }
+    .page-sectores{
+        .descrpcion-sectores{
+            p{
+                padding: 0;
+            }
+        }
+    }
+    .clientes{
+        position: relative;
+        .lista-sectores{
+            border-left: @borde;
+            border-bottom: @borde;
+            clear: both;
+            font-size: .85em;
+            float: left;
+            width: 130px;
+            &:first-child{
+                border-top: @borde;
+            }
+            a{
+                color: @grisOscuro;
+                display: block;
+                padding: 1.2em .5em;
+                
+            }
+            &.activo,
+            &:hover{
+                a{
+                    color: @azulMedio;
+                    // font-weight: bold;
+                }
+            }
+        }
+        .clientes-sectores{
+            background: #F1F1F1;
+            float: right;
+            margin: -207px 2.8% 20px;
+            min-height: 245px;
+            padding: 3% 3% 0;
+            position: relative;
+            width: 52%;
+            img{
+                display: block;
+                box-shadow: 0 0 3px #CCC;
+                height: auto;
+                margin: 1% auto 3%;
+                width: 96%;
+            }
+            >a{
+                background: #EEE;
+                border: 1px solid #CCC;
+                bottom: -20px;
+                color: @grisOscuro;
+                padding: 3%;
+                position: absolute;
+                right: -13px;
+                width: 150px;
+            }
+        }
+    }
+
+    .pane-noticias-noticias,
+    .slider_notas{
+        overflow: hidden;
+        position: relative;
+        .nav-notas{
+            bottom: 40px;
+            left: 105px;
+            position: absolute;
+            z-index: 90;
+            li{
+                float: left;
+                a{
+                    background: @grisOscuro;
+                    border-radius: 10px;
+                    display: block;
+                    height: 15px;
+                    margin: .5em;
+                    width: 15px;
+                    &.activo{
+                        background: @verdeBase;
+                    }
+                }
+            }
+        }
+    }
+    .page-noticias,
+    .page-news{
+        .contenedor-noticias{
+            float: left;
+            width: 38%;
+            ul{
+                display: none;
+            }
+            .noticia{
+                border: @borde;
+                margin-bottom: 1em;
+                padding: 3%;
+                .titulo-noticia{
+                    a{
+                        color: #666;
+                        display: block;
+                        font-family: @fuenteTitulos;
+                        margin-bottom: .5em;
+                        &:hover{
+                            color: @verdeBase;
+                        }
+                    }
+                }
+                .descripcion-noticia{
+                    font-size: .95em;
+                }
+            }
+        }
+        .notaActiva{
+            display: block;
+            border: @borde;
+            float: right;
+            // height: 560px;
+            margin-bottom: 1em;
+            overflow: hidden;
+            // overflow-y: auto;
+            padding: 2%;
+            // width: 61%;
+            .detalle-titulo{
+                color: @verdeBase;
+                display: block;
+                font-family: @fuenteTitulos;
+                margin-bottom: 1em;
+            }
+            img{
+                height: auto;
+                margin-bottom: 1em;
+                width: 100%;
+            }
+        }
+        .nav-notas{
+            display: none;
+        }
+    }
+    .page-servicios,
+    .page-services{
+            .mas-servicios{
+                background: @grisBase;
+                clear: both;
+                float: left;
+                margin-bottom: 1em;
+                // min-height: 192px;
+                padding: 1.5%;
+                width: 100%;
+                h2{
+                    // margin-bottom: 1em;
+                }
+                ul{
+                    display: none;
+                    padding: 0 0 0 20px;
+                    li{
+                        list-style: disc;
+                        float: left;
+                        margin-right: 4%;
+                        width: 46%;
+                        a{
+                            // display: block;
+                            // padding: 10px;
+                            border-radius: 10px;
+                            cursor: pointer;
+                            display: block;
+                            height: 15px;
+                            overflow: hidden;
+                            width: 15px;
+                            &:before{
+                                background: #CECECE;
+                                border-radius: 5px;
+                                content: ' ';
+                                display: block;
+                                height: 15px;
+                                width: 15px;
+                            }
+                        }
+                    }
+                }
+            }
+            .otroServicio{
+                border: @borde;
+                display: block;
+                float: left;
+                height: 190px;
+                margin-bottom: 1em;
+                overflow: hidden;
+                padding: 1.5%;
+                width: 96%;
+                >div:first-child{
+                    font-family: @fuenteTitulos;
+                    margin-bottom: .5em;
+                }
+                >div:last-child{
+                    background: #f1f1f1;
+                    height: 141px;
+                    overflow: hidden;
+                    padding: 1.5%;
+                }
+            }
+        .lista-proyectos{
+            clear: both;
+            overflow: hidden;
+            li{
+                border: @borde;
+                border-left-width: 0;
+                float: left;
+                margin-bottom: .5em;
+                padding: .5em;
+                &:first-child,
+                &:last-child{
+                    border-left-width: 1px;
+                }
+            }
+        }
+    }
+    .content>div.form-item,
+    .links.inline .translation_en{
+        display: none;
+    }
+    .webform-client-form{
+        margin: 0 auto;
+        width: 40%;
+        label{
+            font-family: @fuenteTitulos;
+            margin-bottom: .5em;
+        }
+        input,textarea{
+            border: @borde;
+            font-family: @fuenteBase;
+            font-size: 16px;
+            padding: 1%;
+            width: 98%;
+        }
+        textarea{
+            width: 100%;
+        }
+        input[type=submit]{
+            background: @azulMedio;
+            color: @blanco;
+            margin-top: .5em;
+            padding: .5em;
+            width: 101%;
+        }
+    }
+    .footer{
+        background: @grisBase;
+        color: @grisOscuro;
+        -webkit-box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.15);
+        font-size: .9em;
+        margin: -2px auto 0;
+        padding: 3% 2%;
+        max-width: 980px;
+        width: 96%;
+        >div{
+            margin-bottom: 2%;
+            &.contacto{
+                font-family: @fuenteTitulos;
+                text-transform: uppercase;
+                a{
+                    color: @grisOscuro;
+                }
+            }
+            &.ciudad1,
+            &.ciudad2{
+                font-size: .9em;
+                margin: 3% 0;
+                p{
+                    color:@azulBase;
+                    font-weight: bold;
+                    margin-bottom: 2%;
+                }
+                .dir,
+                .tel{
+                    &:before{
+                        content: ',';
+                        font-family: @fontIco;
+                        font-size: 1.5em;
+                        vertical-align: -1px;
+                        -webkit-font-smoothing: antialiased;
+                    }
+                }
+                .tel{
+                    &:before{
+                        content: 'N';
+                    }
+                }
+            }
+            &.contacto-mail{
+                &:before{
+                    content: 'm';
+                    font-family: @fontIco;
+                    font-size: 1.5em;
+                    vertical-align: -1px;
+                    -webkit-font-smoothing: antialiased;
+                }
+            }
+            &.trabaje-nosotros{
+                background: @azulMedio;
+                margin: 0 -2% -3% -2%;
+                text-align: center;
+                a{
+                    color: @blanco;
+                    display: block;
+                    padding: 5%;
+                    &:before{
+                        content: 'K';
+                        font-family: @fontIco;
+                        font-size: 1.5em;
+                        vertical-align: -1px;
+                        -webkit-font-smoothing: antialiased;
+                    }
+                }
+            }
+            &.redes{
+                overflow: hidden;
+                a{
+                    float: left;
+                    margin-right: 5px;
+                    background: url('../images/redes.png') no-repeat 0 0;
+                    display: block;
+                    height: 20px;
+                    text-indent: -9999px;
+                    width: 20px;
+                    &.tw{
+                        background-position: 0 -34px;
+                    }
+                    &.ln{
+                        background-position: 0 -70px;
+                    }
+                }
+            }
+        }
+    }
+    /*Mobile grandes*/
+    @media (min-width: 480px){
+        #header .block-menu-personalizado ul{
+            width: 61.8%;
+        }
+        .clientes{
+            .clientes-sectores{
+                width: 62%;
+                img{
+                    float: left;
+                    margin: 1% 1.5% 3%;
+                    width: 46%;
+                }
+            }
+        }
+        #footer{
+            .contacto{
+                margin: 0;
+            }
+            .ciudad1,
+            .ciudad2,
+            .contacto-mail,
+            .redes{
+                float: left;
+                width: 50%;
+            }
+            .trabaje-nosotros{
+                clear: both;
+                a{
+                    padding: 2%;
+                }
+            }
+        }
+    }
+    /*Tablet*/
+    @media (min-width: 768px){
+        #header #btn-movil{
+            display: none;
+        }
+        #header{
+            .block-menu-personalizado{
+                ul{
+                    box-shadow: none;
+                    display: block;
+                    height: 32px;
+                    margin-left: 180px;
+                    position: inherit;
+                    width: auto;
+                    li{
+                        border-left: 1px solid @azulClaro;
+                        float: left;
+                        a{
+                            display: block;
+                            padding: 10px 14px;
+                        }
+                        &:first-child{
+                            border: none;
+                        }
+                    }
+                }
+                // span{
+                //     display: none;
+                // }
+            }
+        }
+        .contenedor-sectores,
+        .contenedor-servicios{
+            .lista-sectores,
+            .lista-servicios{
+                ul{
+                    width: 20%;
+                    li{
+                        border-top: @borde;
+                        margin: 0;
+                        padding: .5em;
+                        &:first-child{
+                            border: none;
+                        }
+                        a{  
+                            border-radius: 0;
+                            display: table-cell;
+                            height: 50px;
+                            vertical-align: middle;
+                            width: auto;
+                            &:before{
+                                display: none;
+                            }
+                        }
+                    }
+                }
+                >div{
+                    margin-bottom: 3%;
+                    width: 79%!important;
+                    .descripcion-servicio{
+                        margin: 0;
+                        padding: 2%;
+                        position: absolute;
+                        right: -21%;
+                        top: 12%;
+                        width: 28%;
+                    }
+                }
+            }
+        }
+        .contenedor-sectores .lista-sectores > div .descripcion-servicio,
+        .contenedor-servicios .lista-servicios > div .descripcion-servicio{
+            margin-top: -10px;
+            position: relative;
+            right: 25%;
+            width: 121.3%;
+        }
+        .contenedor-servicios .lista-servicios > div .descripcion-servicio{
+            right: 0;
+            width: 96.3%;
+        }
+        .contiene-acordeon h1 a{
+            padding: 1.5% 0;
+        }
+        .contiene-acordeon .contiene-proyectos{
+            margin-bottom: 1.5%;
+        }
+        #main{
+            padding: 3% 1.8%;
+        }
+        .page-inicio .slider_notas{
+            float: left;
+        }
+        .page-inicio .pane-content > section > div:last-child{
+            float: left;
+            margin: 0 0 0 2%;
+            min-height: 179px;
+            overflow: hidden;
+            width: 42%;
+            h2{
+                margin-bottom: 3%;
+            }
+        }
+        .page-inicio .pane-content >section >div:last-child,
+        .page-inicio .slider_notas,
+        .descrpcion-sectores,
+        .nuestra-historia{
+            padding: 1.5%;
+            h2, h1{
+                margin-bottom: 3%;
+            }
+            p{
+                padding: 1.5%;
+            }
+        }
+        .page-inicio .slider_notas{
+            padding-bottom: 5%;
+        }
+        .page-sectores{
+            .titulo-descripcion{
+                float: left;
+                width: 60%;
+            }
+        }
+        .clientes{
+            .clientes-sectores{
+                width: 73%;
+                img{
+                    float: left;
+                    margin: 1% 1.5% 3%;
+                    width: 30%;
+                }
+                >a{
+                    padding: 1.5%;
+                }
+            }
+        }
+        .page-noticias,
+        .page-news{
+            .contenedor-noticias ul{
+                display: block;
+                overflow: hidden;
+                padding-bottom: 30px !important;
+            }
+            .notaActiva{
+                display: none;
+                height: 513px;
+                margin-bottom: 40px;
+                overflow-y: auto;
+                width: 55%;
+                &.active{
+                    display: block;
+                }
+            }
+            .nav-notas{
+                bottom: 0;
+                display: block;
+            }
+        }
+        .page-servicios .otroServicio,
+        .page-services .otroServicio{
+            width: 45%;
+        }
+        // .page-servicios .otroServicio:nth-child(even),
+        // .page-services .otroServicio:nth-child(even){
+        //     margin-left: 2%;
+        // }
+    }
+    /*Tablet grande*/
+    @media (min-width: 840px){
+        #footer{
+            overflow: hidden;
+            .contacto{
+                margin: 0;
+            }
+            .ciudad1,
+            .ciudad2,
+            .contacto-mail,
+            .redes{
+                display: inline-block;
+                float: none;
+                vertical-align: middle;
+                width: 20%;
+            }
+            .ciudad1,
+            .ciudad2{
+                width: 28%;
+            }
+        }
+    }
+    /*desktop grande*/
+    @media (min-width: 1024px){
+        #header {
+            h1 a{
+                left: 50%;
+                margin-left: -500px;
+            }
+            .block-menu-personalizado{
+                left: 50%;
+                margin-left: -490px;
+                // margin: 0 auto;
+                max-width: 990px;
+                position: relative;
+                span{
+                    &:nth-child(2){
+                        right: 111px;
+                        a{
+                            background-position: 10px 14px;
+                            padding-left: 36px;
+                            padding-top: 14px;
+                            text-indent: 0;
+                            width: 31px;
+                        }
+                    }
+                    &:last-child{
+                        width: 110px;
+                        a{
+                            color: @blanco;
+                            display: block;
+                            padding-top: 12px;
+                            &:before{
+                                float: left;
+                                line-height: .5;
+                                padding-top: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        #main{
+            border: 1px solid #CECECE;
+            border-bottom: none;
+            padding: 3% 20px;
+        }
+        .contenedor-sectores,
+        .contenedor-servicios{
+            .lista-sectores,
+            .lista-servicios{
+                ul{
+                    width: 17%;
+                }
+                >div{
+                    margin-bottom: 3%;
+                    width: 70%!important;
+                    .descripcion-servicio{
+                        height: 215px;
+                        position: absolute;
+                        right: -18%;
+                        width: 35%;
+                        p{
+                            height: 230px;
+                            overflow: hidden;
+                            overflow-y: visible;
+                        }
+                        img{
+                            height: auto !important;
+                            width: 100% !important;
+                        }
+                    }
+                }
+            }
+        }
+        .page-inicio .contiene-informacion{
+            float: right;
+            position: relative;
+            width: 86%;
+            .pestanas{
+                left: -160px;
+                position: absolute;
+                width: 140px;
+                a{
+                    border-bottom: 1px solid #CECECE;
+                    margin-bottom: 10px;
+                    width: 90px;
+                    &.activo{
+                        border-right-color: transparent;
+                    }
+                    &:after{
+                        top: 21%;
+                        border-top-color: transparent;
+                        border-left-color: #f1f1f1;
+                        left: 113%;
+                    }
+                }
+            }
+        }
+        .page-inicio .slider_notas{
+            margin-left: 14.2%;
+            margin-bottom: 0;
+            padding-bottom: 4.2%;
+        }
+        .page-inicio .contenedor-sectores .lista-sectores > div .descripcion-servicio p{
+            height: 100px;
+        }
+        .page-inicio .pane-content > section {
+            clear: both;
+            overflow: hidden;
+            position: relative;
+            .pestanas{
+                left: 0;
+                position: absolute;
+                top: 70px;
+                a:after{
+                    border-color: rgba(136, 183, 213, 0);
+                    border-left-color: @verdeBase;
+                    left: 113%;
+                    top: 18%;
+                }
+            }
+            > div:last-child{
+                width: 39.3%;
+            }
+        }
+        .page-experiencia{
+            .contenedor-sectores{
+                float: left;
+                width: 74%;
+                .lista-sectores ul{
+                    width: 20%;
+                }
+                .lista-sectores > div{
+                    width: 79% !important;
+                }
+            }
+            .nuestra-historia{
+                clear: none;
+                float: right;
+                width: 22%;
+            }
+        }
+        .clientes{
+            padding: 1.5% 1.5% 0;
+            .lista-sectores{
+                clear: none;
+                border: @borde;
+                border-width: 1px 1px 0 0;
+                font-size: .95em;
+                max-width: 130px;
+                width: auto;
+                &:first-child{
+                    border-left-width: 1px;
+                }
+                a{
+                    display: table-cell;
+                    height: 32px;
+                    vertical-align: middle;
+                    padding: .5em;
+                    text-align: center;
+                }
+            }
+            .clientes-sectores{
+                margin: 0;
+                padding: 1.5% 1.5% 0;
+                width: 97%;
+                img{
+                    float: left;
+                    margin: 1% 1.5% 3%;
+                    width: 20%;
+                }
+                >a{
+                    padding: 1.5%;
+                }
+            }
+        }
+        .page-noticias .nav-notas,
+        .page-news .nav-notas{
+            bottom: 40px;
+        }
+        .page-servicios,
+        .page-services{
+             .mas-servicios{
+                float: left;
+                min-height: 192px;
+                width: 55%;
+                h2{
+                    margin-bottom: 1em;
+                }
+                ul{
+                    display: block;
+                }
+            }
+             .otroServicio{
+                background: #FFF;
+                // float: right;
+                display: none;
+                margin-left: -2%;
+                width: 40.75%;
+             }
+        }
+        #footer{
+            .footer{
+                padding: 10px 10px 5px;
+                >*{
+                    display: inline-block;
+                    margin: 0;
+                    vertical-align: middle;
+                    width: 13%;
+                }
+                .ciudad2,
+                .ciudad1{
+                    margin: 0;
+                    width: 22%;
+                }
+                .contacto-mail{
+                    width: 16%;
+                }
+                .redes{
+                    margin-right: 1%;
+                    width: 8%;
+                }
+                .trabaje-nosotros{
+                    margin: -20px -10px;
+                    padding: 36px 0;
+                    width: 18%;
+                }
+            }
+        }
+    }
